@@ -14,6 +14,92 @@
 		)
 		(uuid "36db8468-f13e-41fe-ae04-787d42556b8b")
 	)
+	(bus
+		(pts
+			(xy 71.12 101.6) (xy 85.09 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15528780-71b7-481d-a0db-8f34378269b9")
+	)
+	(bus
+		(pts
+			(xy 85.09 101.6) (xy 85.09 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2360bf44-3574-4940-9da3-a819458daeea")
+	)
+	(bus
+		(pts
+			(xy 85.09 99.06) (xy 87.63 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73c26e3f-1890-47ff-8189-3413fdea8f4f")
+	)
+	(wire
+		(pts
+			(xy 71.12 90.17) (xy 87.63 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93d3e121-1264-4065-9a98-775bf2661df7")
+	)
+	(sheet
+		(at 154.94 123.19)
+		(size 24.13 16.51)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4e145819-59fd-45dd-a08f-edddbdb0b5d2")
+		(property "Sheetname" "laserSensor"
+			(at 154.94 122.4784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "laserSensor.kicad_sch"
+			(at 154.94 140.2846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
+					(page "7")
+				)
+			)
+		)
+	)
 	(sheet
 		(at 41.91 83.82)
 		(size 29.21 20.32)
@@ -52,9 +138,29 @@
 				(justify left top)
 			)
 		)
-		(pin "VBATT" output
-			(at 71.12 93.98 0)
-			(uuid "07866e1a-3133-407a-af84-3df671aa72e2")
+		(pin "3V3" input
+			(at 71.12 90.17 0)
+			(uuid "f7bd1c9d-9f71-4862-a0ca-e89c4ce099fb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VBATT" input
+			(at 71.12 97.79 0)
+			(uuid "19d1e60f-cbea-4632-8b8b-88b88640340c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB" input
+			(at 71.12 101.6 0)
+			(uuid "0219e952-0215-40ce-9d97-89be396a3169")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -71,7 +177,7 @@
 		)
 	)
 	(sheet
-		(at 97.79 77.47)
+		(at 87.63 81.28)
 		(size 29.21 22.86)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -87,7 +193,7 @@
 		)
 		(uuid "a8180eac-1fe6-471d-af74-2ff2812aea69")
 		(property "Sheetname" "microcontroller"
-			(at 97.79 76.7584 0)
+			(at 87.63 80.5684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -98,7 +204,73 @@
 			)
 		)
 		(property "Sheetfile" "microcontroller.kicad_sch"
-			(at 97.79 100.9146 0)
+			(at 87.63 104.7246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "3V3" input
+			(at 87.63 90.17 180)
+			(uuid "b1d0d7b4-34cf-41bb-9a86-07bf023590de")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USB" input
+			(at 87.63 99.06 180)
+			(uuid "20436201-10a7-4520-8522-a6accbe289d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 152.4 92.71)
+		(size 27.94 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d81bad0f-b8dc-4a6a-8f5b-8ea64f0dd5bb")
+		(property "Sheetname" "imu"
+			(at 152.4 91.9984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "imu.kicad_sch"
+			(at 152.4 112.3446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -111,7 +283,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
-					(page "2")
+					(page "6")
 				)
 			)
 		)

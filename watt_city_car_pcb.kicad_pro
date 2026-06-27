@@ -416,7 +416,7 @@
         "uuid": "72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
       }
     ],
-    "used_designators": "U1-3,D1001,#PWR1-9,R1-2,J1-3,C1-3",
+    "used_designators": "U4-6",
     "variants": []
   },
   "sheets": [
@@ -439,6 +439,14 @@
     [
       "b5be7689-98d6-47fe-8b13-538f7b8d313e",
       "usb"
+    ],
+    [
+      "d81bad0f-b8dc-4a6a-8f5b-8ea64f0dd5bb",
+      "imu"
+    ],
+    [
+      "4e145819-59fd-45dd-a08f-edddbdb0b5d2",
+      "laserSensor"
     ]
   ],
   "text_variables": {},

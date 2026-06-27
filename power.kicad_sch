@@ -272,6 +272,26 @@
 		)
 		(uuid "062355e8-bf1a-4146-9204-c0b8fd3115ed")
 	)
+	(bus
+		(pts
+			(xy 104.14 140.97) (xy 130.81 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34e2885c-170e-4509-8a8b-e98e64ae8361")
+	)
+	(wire
+		(pts
+			(xy 179.07 134.62) (xy 185.42 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78280c4d-de82-4b47-bc37-0e0eccf3fca3")
+	)
 	(wire
 		(pts
 			(xy 123.19 104.14) (xy 129.54 104.14)
@@ -282,8 +302,39 @@
 		)
 		(uuid "cdbb6506-7e49-4cee-ad4b-d3157bdef344")
 	)
+	(wire
+		(pts
+			(xy 176.53 127) (xy 185.42 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0d4608a-9290-4b7c-b031-d7544bef4098")
+	)
+	(label "{USB_D+, USB_D-}"
+		(at 106.68 140.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "da16d51e-5f1c-4b9b-a0ea-008454373f37")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 179.07 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "023c430f-06c5-4a52-9c0a-3d35df843935")
+	)
 	(hierarchical_label "VBATT"
-		(shape output)
+		(shape input)
 		(at 124.46 91.44 180)
 		(effects
 			(font
@@ -292,6 +343,28 @@
 			(justify right)
 		)
 		(uuid "3a85ad17-3b98-43db-adbb-3c9b3789ba1b")
+	)
+	(hierarchical_label "VBATT"
+		(shape input)
+		(at 176.53 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "88af9f10-7873-4a58-a9a4-fe77f9376c1a")
+	)
+	(hierarchical_label "USB"
+		(shape input)
+		(at 130.81 140.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d7e0e4cb-6462-43d4-8efd-9eb9080e90d3")
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x01_Socket")
@@ -581,6 +654,16 @@
 		(pin "VBATT" input
 			(at 185.42 127 180)
 			(uuid "d325ab1e-7756-4af5-aa12-309dab58dff9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "3V3" input
+			(at 185.42 134.62 180)
+			(uuid "63d7a245-d2e8-4053-8608-ef3de77a0967")
 			(effects
 				(font
 					(size 1.27 1.27)
