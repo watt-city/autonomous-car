@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "bd25c66c-550f-40b3-a130-08b5d0801f27")
+	(uuid "fbfc5d92-9696-4833-b34c-2373b304b698")
 	(paper "A4")
 	(lib_symbols
 		(symbol "VL53L0CXV0DH/1:VL53L0CXV0DH_1"
@@ -382,7 +382,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b6be1258-d219-4d41-ac9d-efb76851565d")
-		(property "Reference" "U6"
+		(property "Reference" "U701"
 			(at 134.62 86.36 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -476,7 +476,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/4e145819-59fd-45dd-a08f-edddbdb0b5d2"
-					(reference "U6")
+					(reference "U701")
 					(unit 1)
 				)
 			)

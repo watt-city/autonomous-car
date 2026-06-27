@@ -2242,7 +2242,7 @@
 		(uuid "c4919353-85db-4ab2-93ea-67b9fbed7a1a")
 	)
 	(hierarchical_label "+5V_USB"
-		(shape input)
+		(shape output)
 		(at 144.78 83.82 0)
 		(effects
 			(font
@@ -2275,7 +2275,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0c65dbfd-cb76-4e4e-9792-04d2903fd045")
-		(property "Reference" "J1"
+		(property "Reference" "J501"
 			(at 99.06 76.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2475,7 +2475,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "J1")
+					(reference "J501")
 					(unit 1)
 				)
 			)
@@ -2492,7 +2492,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3b6cbe6b-a7d8-4339-9221-9b2216214a95")
-		(property "Reference" "R2"
+		(property "Reference" "R501"
 			(at 113.284 117.602 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2697,7 +2697,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "R2")
+					(reference "R501")
 					(unit 1)
 				)
 			)
@@ -2715,7 +2715,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41c8024b-6865-4870-8dd5-ed17a4c58a22")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0501"
 			(at 99.06 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -2775,7 +2775,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "#PWR02")
+					(reference "#PWR0501")
 					(unit 1)
 				)
 			)
@@ -2793,7 +2793,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4c2e47ff-e3b6-4082-84b4-1b40ac729469")
-		(property "Reference" "U2"
+		(property "Reference" "U501"
 			(at 154.94 112.5854 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2948,7 +2948,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "U2")
+					(reference "U501")
 					(unit 1)
 				)
 			)
@@ -2966,7 +2966,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "539b1b39-dfe7-4353-944d-ee2366c20dbd")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR0502"
 			(at 148.59 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -3026,7 +3026,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "#PWR07")
+					(reference "#PWR0502")
 					(unit 1)
 				)
 			)
@@ -3034,7 +3034,7 @@
 	)
 	(symbol
 		(lib_id "bfr_diodes:1N5819WS")
-		(at 138.43 83.82 0)
+		(at 138.43 83.82 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3044,8 +3044,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "74d9dd0e-36b8-4b0e-a625-f89e56264e62")
-		(property "Reference" "D1001"
-			(at 138.1125 77.47 0)
+		(property "Reference" "D501"
+			(at 138.7475 77.47 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3055,7 +3055,7 @@
 			)
 		)
 		(property "Value" "600m"
-			(at 138.1125 80.01 0)
+			(at 138.7475 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3065,7 +3065,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3076,7 +3076,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3087,7 +3087,7 @@
 			)
 		)
 		(property "Description" "1A 600mV SOD-323 Schottky Diode"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3098,7 +3098,7 @@
 			)
 		)
 		(property "LCSC P/N" "C191023"
-			(at 138.176 80.01 0)
+			(at 138.684 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3109,7 +3109,7 @@
 			)
 		)
 		(property "Digikey P/N" "5272-B5819WSCT-ND"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3120,7 +3120,7 @@
 			)
 		)
 		(property "Mouser P/N" "833-B5819WS-TP"
-			(at 138.176 80.01 0)
+			(at 138.684 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3131,7 +3131,7 @@
 			)
 		)
 		(property "Order From" "Digikey"
-			(at 138.43 79.756 0)
+			(at 138.43 87.884 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3142,7 +3142,7 @@
 			)
 		)
 		(property "JLCPCB Basic Part" "Yes"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3175,7 +3175,7 @@
 			)
 		)
 		(property "Pretty Name" "1A SOD-323 Schottky Diode"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3186,7 +3186,7 @@
 			)
 		)
 		(property "Sim.Library" "${BFRUH_DIR}\\Electronics\\spice_models\\bfr_diodes\\1N5819WS.lib"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3197,7 +3197,7 @@
 			)
 		)
 		(property "Sim.Name" "1N5819WS"
-			(at 138.176 80.01 0)
+			(at 138.684 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3208,7 +3208,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3219,7 +3219,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 138.176 80.01 0)
+			(at 138.684 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3230,7 +3230,7 @@
 			)
 		)
 		(property "Created by" "Manual Entry"
-			(at 138.43 80.01 0)
+			(at 138.43 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3260,7 +3260,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "D1001")
+					(reference "D501")
 					(unit 1)
 				)
 			)
@@ -3277,7 +3277,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "76db5122-c9ea-449f-801a-76ed18f1f49c")
-		(property "Reference" "R1"
+		(property "Reference" "R502"
 			(at 126.492 114.554 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3484,7 +3484,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/b5be7689-98d6-47fe-8b13-538f7b8d313e"
-					(reference "R1")
+					(reference "R502")
 					(unit 1)
 				)
 			)

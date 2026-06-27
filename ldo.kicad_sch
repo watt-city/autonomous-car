@@ -1027,7 +1027,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "05596ec0-b020-4225-ab6f-314442b70c1f")
-		(property "Reference" "C2"
+		(property "Reference" "C402"
 			(at 154.94 118.1099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1234,7 +1234,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "C2")
+					(reference "C402")
 					(unit 1)
 				)
 			)
@@ -1252,7 +1252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "90ac3c5c-a0e7-4fa7-a993-962beb5796b4")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR0402"
 			(at 134.62 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -1312,7 +1312,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR09")
+					(reference "#PWR0402")
 					(unit 1)
 				)
 			)
@@ -1330,7 +1330,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a01fa1f7-34ad-4490-9651-974fbfdcc0c2")
-		(property "Reference" "U3"
+		(property "Reference" "U401"
 			(at 134.62 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1401,7 +1401,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "U3")
+					(reference "U401")
 					(unit 1)
 				)
 			)
@@ -1419,7 +1419,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b851d75f-be40-405e-9dc1-1d66a32c1edb")
-		(property "Reference" "C3"
+		(property "Reference" "C401"
 			(at 121.92 118.1099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1626,7 +1626,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "C3")
+					(reference "C401")
 					(unit 1)
 				)
 			)
@@ -1644,7 +1644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ddd1f56f-dd1f-4940-bfec-864f588b9881")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR0403"
 			(at 151.13 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -1704,7 +1704,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR08")
+					(reference "#PWR0403")
 					(unit 1)
 				)
 			)
@@ -1722,7 +1722,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f4358b7d-0a3e-4534-9767-5c20c18abcc5")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR0401"
 			(at 118.11 132.08 0)
 			(hide yes)
 			(show_name no)
@@ -1782,7 +1782,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR06")
+					(reference "#PWR0401")
 					(unit 1)
 				)
 			)

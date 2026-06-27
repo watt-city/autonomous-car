@@ -378,7 +378,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "06efe500-df52-4e16-841f-495414f1865c")
-		(property "Reference" "J3"
+		(property "Reference" "J302"
 			(at 135.89 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -439,7 +439,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "J3")
+					(reference "J302")
 					(unit 1)
 				)
 			)
@@ -457,7 +457,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1de68ba0-42c9-4740-924b-115b4c688baf")
-		(property "Reference" "J2"
+		(property "Reference" "J301"
 			(at 135.89 90.1699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -518,7 +518,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "J2")
+					(reference "J301")
 					(unit 1)
 				)
 			)
@@ -536,7 +536,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c400093-5124-47af-ad14-6b5ba0d873e2")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR0301"
 			(at 123.19 110.49 0)
 			(hide yes)
 			(show_name no)
@@ -596,7 +596,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "#PWR05")
+					(reference "#PWR0301")
 					(unit 1)
 				)
 			)
@@ -717,7 +717,7 @@
 				(justify left top)
 			)
 		)
-		(pin "+5V_USB" input
+		(pin "+5V_USB" output
 			(at 104.14 130.81 0)
 			(uuid "3468b0e6-e626-47d8-b988-d0093fd8eab5")
 			(effects

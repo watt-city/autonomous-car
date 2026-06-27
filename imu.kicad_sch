@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "b286f428-6120-437a-bc20-971e310bc73f")
+	(uuid "f17a2a67-0679-4523-a8ca-456d6375cf8a")
 	(paper "A4")
 	(lib_symbols
 		(symbol "Sensor_Motion:LSM6DSM"
@@ -372,7 +372,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a2d0fc27-addf-442a-ab9c-1921c0b8c04e")
-		(property "Reference" "U4"
+		(property "Reference" "U601"
 			(at 135.4933 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -473,7 +473,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/d81bad0f-b8dc-4a6a-8f5b-8ea64f0dd5bb"
-					(reference "U4")
+					(reference "U601")
 					(unit 1)
 				)
 			)
