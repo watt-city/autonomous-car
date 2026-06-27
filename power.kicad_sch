@@ -264,7 +264,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 91.44) (xy 129.54 91.44)
+			(xy 121.92 91.44) (xy 129.54 91.44)
 		)
 		(stroke
 			(width 0)
@@ -274,7 +274,7 @@
 	)
 	(bus
 		(pts
-			(xy 104.14 140.97) (xy 130.81 140.97)
+			(xy 104.14 138.43) (xy 130.81 138.43)
 		)
 		(stroke
 			(width 0)
@@ -284,13 +284,13 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 134.62) (xy 185.42 134.62)
+			(xy 104.14 128.27) (xy 147.32 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "78280c4d-de82-4b47-bc37-0e0eccf3fca3")
+		(uuid "36606388-4c9f-4a52-bf60-e0b3ec3a7f7d")
 	)
 	(wire
 		(pts
@@ -304,7 +304,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 127) (xy 185.42 127)
+			(xy 138.43 124.46) (xy 147.32 124.46)
 		)
 		(stroke
 			(width 0)
@@ -312,8 +312,18 @@
 		)
 		(uuid "d0d4608a-9290-4b7c-b031-d7544bef4098")
 	)
+	(label "VBATT"
+		(at 138.43 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2fabb595-3151-46b4-a0fe-719aed6781e5")
+	)
 	(label "{USB_D+, USB_D-}"
-		(at 106.68 140.97 0)
+		(at 106.68 138.43 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -322,42 +332,19 @@
 		)
 		(uuid "da16d51e-5f1c-4b9b-a0ea-008454373f37")
 	)
-	(hierarchical_label "3V3"
-		(shape input)
-		(at 179.07 134.62 180)
+	(label "VBATT"
+		(at 121.92 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left bottom)
 		)
-		(uuid "023c430f-06c5-4a52-9c0a-3d35df843935")
-	)
-	(hierarchical_label "VBATT"
-		(shape input)
-		(at 124.46 91.44 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3a85ad17-3b98-43db-adbb-3c9b3789ba1b")
-	)
-	(hierarchical_label "VBATT"
-		(shape input)
-		(at 176.53 127 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "88af9f10-7873-4a58-a9a4-fe77f9376c1a")
+		(uuid "f214d011-06a2-4ce3-a815-a2f635868847")
 	)
 	(hierarchical_label "USB"
-		(shape input)
-		(at 130.81 140.97 0)
+		(shape bidirectional)
+		(at 130.81 138.43 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -603,7 +590,7 @@
 		)
 	)
 	(sheet
-		(at 185.42 121.92)
+		(at 147.32 119.38)
 		(size 34.29 19.05)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -619,7 +606,7 @@
 		)
 		(uuid "81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0")
 		(property "Sheetname" "ldo"
-			(at 185.42 121.2084 0)
+			(at 147.32 118.6684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -630,7 +617,7 @@
 			)
 		)
 		(property "Sheetfile" "ldo.kicad_sch"
-			(at 185.42 141.5546 0)
+			(at 147.32 139.0146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -641,7 +628,7 @@
 			)
 		)
 		(property "Field2" ""
-			(at 185.42 121.92 0)
+			(at 147.32 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -652,7 +639,7 @@
 			)
 		)
 		(pin "VBATT" input
-			(at 185.42 127 180)
+			(at 147.32 124.46 180)
 			(uuid "d325ab1e-7756-4af5-aa12-309dab58dff9")
 			(effects
 				(font
@@ -661,9 +648,9 @@
 				(justify left)
 			)
 		)
-		(pin "3V3" input
-			(at 185.42 134.62 180)
-			(uuid "63d7a245-d2e8-4053-8608-ef3de77a0967")
+		(pin "+5V_USB" input
+			(at 147.32 128.27 180)
+			(uuid "68a58bcb-7f1f-4f96-942d-f3575a5c6a63")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -680,7 +667,7 @@
 		)
 	)
 	(sheet
-		(at 59.69 121.92)
+		(at 59.69 119.38)
 		(size 44.45 26.67)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -696,7 +683,7 @@
 		)
 		(uuid "b5be7689-98d6-47fe-8b13-538f7b8d313e")
 		(property "Sheetname" "usb"
-			(at 59.69 121.2084 0)
+			(at 59.69 118.6684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -707,7 +694,7 @@
 			)
 		)
 		(property "Sheetfile" "usb.kicad_sch"
-			(at 59.69 149.1746 0)
+			(at 59.69 146.6346 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -718,7 +705,7 @@
 			)
 		)
 		(pin "+5V_USB" output
-			(at 104.14 130.81 0)
+			(at 104.14 128.27 0)
 			(uuid "3468b0e6-e626-47d8-b988-d0093fd8eab5")
 			(effects
 				(font
@@ -727,8 +714,8 @@
 				(justify right)
 			)
 		)
-		(pin "USB" input
-			(at 104.14 140.97 0)
+		(pin "USB" bidirectional
+			(at 104.14 138.43 0)
 			(uuid "c7118d1a-110c-4799-8d15-00607fd5779d")
 			(effects
 				(font

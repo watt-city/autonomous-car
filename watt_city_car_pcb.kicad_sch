@@ -14,9 +14,29 @@
 		)
 		(uuid "36db8468-f13e-41fe-ae04-787d42556b8b")
 	)
+	(wire
+		(pts
+			(xy 71.12 149.86) (xy 115.57 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d712a8a-24cd-4f70-8813-3982bbbed6da")
+	)
+	(wire
+		(pts
+			(xy 71.12 165.1) (xy 115.57 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12381dc7-4f79-402b-97e9-8a4856519db1")
+	)
 	(bus
 		(pts
-			(xy 71.12 101.6) (xy 85.09 101.6)
+			(xy 71.12 99.06) (xy 115.57 99.06)
 		)
 		(stroke
 			(width 0)
@@ -24,39 +44,119 @@
 		)
 		(uuid "15528780-71b7-481d-a0db-8f34378269b9")
 	)
-	(bus
+	(wire
 		(pts
-			(xy 85.09 101.6) (xy 85.09 99.06)
+			(xy 71.12 154.94) (xy 115.57 154.94)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2360bf44-3574-4940-9da3-a819458daeea")
+		(uuid "15ddc8e2-fea0-4abd-a2ae-b5a81dbab68a")
 	)
 	(bus
 		(pts
-			(xy 85.09 99.06) (xy 87.63 99.06)
+			(xy 71.12 119.38) (xy 115.57 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "73c26e3f-1890-47ff-8189-3413fdea8f4f")
+		(uuid "4be9860f-9b3f-4236-acb4-62891b5fcd52")
+	)
+	(bus
+		(pts
+			(xy 71.12 140.97) (xy 115.57 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5153d71d-5a91-4fad-87b4-ea3c995feb0f")
 	)
 	(wire
 		(pts
-			(xy 71.12 90.17) (xy 87.63 90.17)
+			(xy 71.12 128.27) (xy 115.57 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "93d3e121-1264-4065-9a98-775bf2661df7")
+		(uuid "5dfe65d7-5fa8-478f-9b79-8e735f56529f")
+	)
+	(wire
+		(pts
+			(xy 71.12 125.73) (xy 115.57 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65da150f-4d32-496a-8038-d5b2a016bcc7")
+	)
+	(wire
+		(pts
+			(xy 71.12 157.48) (xy 115.57 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9546bca3-25af-469c-a559-a1a8ad113ac5")
+	)
+	(wire
+		(pts
+			(xy 71.12 162.56) (xy 115.57 162.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "959fb102-0cf6-4ba4-9219-e42abbc473ed")
+	)
+	(wire
+		(pts
+			(xy 71.12 147.32) (xy 115.57 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d53b581a-b6c1-4a0c-bd48-934b1ed2f68d")
+	)
+	(label "{USB_D+, USB_D-}"
+		(at 83.82 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1f3dab51-b76f-4020-8227-46f359ac4e39")
+	)
+	(label "LASER_I2C{LASER_I2C_SCL, LASER_I2C_SDA}"
+		(at 72.39 140.97 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "81ed94a8-fc5f-4fd9-adf1-a057889603a4")
+	)
+	(label "IMU_SPI{SCK, CS, MOSI, MISO}"
+		(at 82.55 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b2e810a1-7c78-4875-bc73-f35c7fd55e9c")
 	)
 	(sheet
-		(at 154.94 123.19)
-		(size 24.13 16.51)
+		(at 44.45 139.065)
+		(size 26.67 31.75)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -69,9 +169,9 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "4e145819-59fd-45dd-a08f-edddbdb0b5d2")
-		(property "Sheetname" "laserSensor"
-			(at 154.94 122.4784 0)
+		(uuid "56c09725-4c0b-4c27-ad0f-0fa15d53c843")
+		(property "Sheetname" "distSensor"
+			(at 44.45 138.3534 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -81,8 +181,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "laserSensor.kicad_sch"
-			(at 154.94 140.2846 0)
+		(property "Sheetfile" "distSensor.kicad_sch"
+			(at 44.45 171.3996 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -92,10 +192,80 @@
 				(justify left top)
 			)
 		)
+		(pin "laser0_interrupt" output
+			(at 71.12 147.32 0)
+			(uuid "664b65ff-117c-4727-b52a-d2cf4c6545ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser1_interrupt" output
+			(at 71.12 154.94 0)
+			(uuid "2c7ebbc3-770b-4b75-99dd-45841c876e9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser2_interrupt" output
+			(at 71.12 162.56 0)
+			(uuid "a6d9c124-d81d-4dd3-ac70-445ac695cd22")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser0_xshut" input
+			(at 71.12 149.86 0)
+			(uuid "99505683-8319-4050-a3e3-45d873eda2a1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser1_xshut" input
+			(at 71.12 157.48 0)
+			(uuid "3e93618e-3034-4b9a-b76c-663d73766bec")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser2_xshut" input
+			(at 71.12 165.1 0)
+			(uuid "71cd13e7-0bcc-4301-b39f-7b75adcd277d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "LASER_I2C" bidirectional
+			(at 71.12 140.97 0)
+			(uuid "10038ffc-e459-48ed-966e-447b827f0b76")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
-					(page "7")
+					(page "10")
 				)
 			)
 		)
@@ -138,28 +308,8 @@
 				(justify left top)
 			)
 		)
-		(pin "3V3" input
-			(at 71.12 90.17 0)
-			(uuid "f7bd1c9d-9f71-4862-a0ca-e89c4ce099fb")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "VBATT" input
-			(at 71.12 97.79 0)
-			(uuid "19d1e60f-cbea-4632-8b8b-88b88640340c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "USB" input
-			(at 71.12 101.6 0)
+		(pin "USB" bidirectional
+			(at 71.12 99.06 0)
 			(uuid "0219e952-0215-40ce-9d97-89be396a3169")
 			(effects
 				(font
@@ -177,8 +327,8 @@
 		)
 	)
 	(sheet
-		(at 87.63 81.28)
-		(size 29.21 22.86)
+		(at 115.57 81.28)
+		(size 29.21 88.9)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -193,7 +343,7 @@
 		)
 		(uuid "a8180eac-1fe6-471d-af74-2ff2812aea69")
 		(property "Sheetname" "microcontroller"
-			(at 87.63 80.5684 0)
+			(at 115.57 80.5684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -204,7 +354,7 @@
 			)
 		)
 		(property "Sheetfile" "microcontroller.kicad_sch"
-			(at 87.63 104.7246 0)
+			(at 115.57 170.7646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -214,9 +364,9 @@
 				(justify left top)
 			)
 		)
-		(pin "3V3" input
-			(at 87.63 90.17 180)
-			(uuid "b1d0d7b4-34cf-41bb-9a86-07bf023590de")
+		(pin "USB" bidirectional
+			(at 115.57 99.06 180)
+			(uuid "20436201-10a7-4520-8522-a6accbe289d3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -224,9 +374,99 @@
 				(justify left)
 			)
 		)
-		(pin "USB" input
-			(at 87.63 99.06 180)
-			(uuid "20436201-10a7-4520-8522-a6accbe289d3")
+		(pin "IMU_SPI" bidirectional
+			(at 115.57 119.38 180)
+			(uuid "c5fd366c-3d6b-4aee-9482-1209fc251ac5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IMU_INT1" input
+			(at 115.57 125.73 180)
+			(uuid "618f4569-046b-46cb-aa27-a5774ca4cf6d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IMU_INT2" input
+			(at 115.57 128.27 180)
+			(uuid "7d83b92d-b771-4467-916a-8e27e5cbcf18")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser0_interrupt" input
+			(at 115.57 147.32 180)
+			(uuid "1cd81fc9-cb50-446b-982f-5489db9fec6b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser0_xshut" output
+			(at 115.57 149.86 180)
+			(uuid "9812c608-4582-45a6-91c8-ac9e4cf4e283")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser1_interrupt" input
+			(at 115.57 154.94 180)
+			(uuid "df959eaa-3fb3-41e0-b1e8-50f1ac652c79")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser1_xshut" output
+			(at 115.57 157.48 180)
+			(uuid "e55bcfe0-0d46-4504-bc3f-3b7d57f103c7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser2_interrupt" input
+			(at 115.57 162.56 180)
+			(uuid "84c36adb-916a-4777-a6d9-6ec0031bd67f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser2_xshut" output
+			(at 115.57 165.1 180)
+			(uuid "9ba12990-a6a1-4c50-bde6-ec4bdfccd40b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LASER_I2C" bidirectional
+			(at 115.57 140.97 180)
+			(uuid "1f247293-2f9d-4c19-9cf1-ad8a832bb0e4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -243,7 +483,7 @@
 		)
 	)
 	(sheet
-		(at 152.4 92.71)
+		(at 43.18 113.03)
 		(size 27.94 19.05)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -259,7 +499,7 @@
 		)
 		(uuid "d81bad0f-b8dc-4a6a-8f5b-8ea64f0dd5bb")
 		(property "Sheetname" "imu"
-			(at 152.4 91.9984 0)
+			(at 43.18 112.3184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -270,7 +510,7 @@
 			)
 		)
 		(property "Sheetfile" "imu.kicad_sch"
-			(at 152.4 112.3446 0)
+			(at 43.18 132.6646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -278,6 +518,36 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "IMU_INT1" output
+			(at 71.12 125.73 0)
+			(uuid "fbefd882-cf09-4e52-8f01-cedf3cc1d7ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "IMU_INT2" output
+			(at 71.12 128.27 0)
+			(uuid "3aa4556a-6cb0-4392-8c0c-66a0f876c2e6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "IMU_SPI" bidirectional
+			(at 71.12 119.38 0)
+			(uuid "432d367a-fe0c-489e-b565-5a59a5c58cdc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

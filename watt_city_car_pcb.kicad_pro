@@ -301,7 +301,7 @@
   "schematic": {
     "annotate_start_num": 0,
     "annotation": {
-      "method": 1,
+      "method": 0,
       "sort_order": 0
     },
     "bom_export_filename": "${PROJECTNAME}.csv",
@@ -416,7 +416,7 @@
         "uuid": "72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
       }
     ],
-    "used_designators": "C201-203,R201-202,#PWR202-205,SW201-202",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
@@ -445,8 +445,20 @@
       "imu"
     ],
     [
-      "4e145819-59fd-45dd-a08f-edddbdb0b5d2",
-      "laserSensor"
+      "aeebd40c-0da3-4061-9217-05e628ea219b",
+      "laserSensor0"
+    ],
+    [
+      "5aa8934c-927e-432a-9b3c-3f0797ce4268",
+      "laserSensor1"
+    ],
+    [
+      "01443649-2488-4611-bfd2-518178958a3f",
+      "laserSensor2"
+    ],
+    [
+      "56c09725-4c0b-4c27-ad0f-0fa15d53c843",
+      "distSensor"
     ]
   ],
   "text_variables": {},

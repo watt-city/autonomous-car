@@ -1,0 +1,449 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "02664101-bef9-4d2f-920a-15bffc08984d")
+	(paper "A4")
+	(lib_symbols)
+	(text "interrupt is input_pullup\nxshut is output"
+		(exclude_from_sim no)
+		(at 123.698 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0aff75d9-ff7c-4950-98e0-5dd6d9b246b2")
+	)
+	(junction
+		(at 78.74 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06d02b13-e1c8-4998-9ae7-575e638cb4ec")
+	)
+	(bus
+		(pts
+			(xy 72.39 125.73) (xy 129.54 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d9fef63-703f-4890-ad4a-50e1b3411076")
+	)
+	(bus
+		(pts
+			(xy 78.74 100.33) (xy 78.74 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1704781f-be1f-4233-9148-41f1e371a2b2")
+	)
+	(bus
+		(pts
+			(xy 78.74 125.73) (xy 78.74 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d027bbf-0777-4f53-8957-0899bcde0137")
+	)
+	(wire
+		(pts
+			(xy 36.83 97.79) (xy 48.26 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20d4a33e-9ffa-456c-8535-c6067f8ad443")
+	)
+	(wire
+		(pts
+			(xy 36.83 121.92) (xy 48.26 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ee00609-445b-455b-b2a7-1a971f5dc510")
+	)
+	(bus
+		(pts
+			(xy 72.39 100.33) (xy 78.74 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e67dbec-5b6c-4341-8885-8416f71dc7f8")
+	)
+	(wire
+		(pts
+			(xy 36.83 160.02) (xy 48.26 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "937f9fe3-3711-4b93-8913-ef6f5dda10b7")
+	)
+	(wire
+		(pts
+			(xy 36.83 104.14) (xy 48.26 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "966ac554-261c-454b-a11a-b853d4293ae8")
+	)
+	(bus
+		(pts
+			(xy 78.74 157.48) (xy 72.39 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfd0adc5-ee9c-4939-9d9a-0bcd5e0df83f")
+	)
+	(wire
+		(pts
+			(xy 38.1 152.4) (xy 48.26 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4b1639a-6cb8-41b6-929f-7c8e24748eb1")
+	)
+	(wire
+		(pts
+			(xy 36.83 128.27) (xy 48.26 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f734645e-d184-4b71-9aa3-1c6ac4f2272e")
+	)
+	(label "LASER_I2C{LASER_I2C_SCL, LASER_I2C_SDA}"
+		(at 82.55 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1252962f-2aa2-4bab-a8cc-1470aaebf655")
+	)
+	(hierarchical_label "laser2_xshut"
+		(shape input)
+		(at 36.83 160.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "33ca842b-4000-47b3-8765-f0a4878a93bb")
+	)
+	(hierarchical_label "laser1_xshut"
+		(shape input)
+		(at 36.83 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "49cdb254-ab4b-4123-ad70-aabfb8421abb")
+	)
+	(hierarchical_label "laser1_interrupt"
+		(shape output)
+		(at 36.83 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5cc90fac-96a9-4e55-b726-a3ad3943eb97")
+	)
+	(hierarchical_label "LASER_I2C"
+		(shape bidirectional)
+		(at 129.54 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6d23f44b-34d0-428b-ba05-faea1cbbfa9d")
+	)
+	(hierarchical_label "laser1_xshut"
+		(shape input)
+		(at 36.83 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "99cadd08-23e7-4e61-ae52-be49aa4e6696")
+	)
+	(hierarchical_label "laser2_interrupt"
+		(shape output)
+		(at 38.1 152.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b0941c85-a365-4dc7-a3a2-69c12211ec0f")
+	)
+	(hierarchical_label "laser1_interrupt"
+		(shape output)
+		(at 36.83 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b46ac263-e41a-433e-96b0-670ae03d39ca")
+	)
+	(sheet
+		(at 48.26 146.05)
+		(size 24.13 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "01443649-2488-4611-bfd2-518178958a3f")
+		(property "Sheetname" "laserSensor2"
+			(at 48.26 145.3384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "laserSensor2.kicad_sch"
+			(at 48.26 164.4146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "laser2_interrupt" output
+			(at 48.26 152.4 180)
+			(uuid "90f4b58a-8c75-4644-8584-f3b43341b1d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LASER_I2C" bidirectional
+			(at 72.39 157.48 0)
+			(uuid "780c5294-a2e2-4365-aab5-3c6c6a9267c2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser2_xshut" input
+			(at 48.26 160.02 180)
+			(uuid "50acbc47-ece9-4f90-912c-252aba37c46c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 48.26 118.11)
+		(size 24.13 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5aa8934c-927e-432a-9b3c-3f0797ce4268")
+		(property "Sheetname" "laserSensor1"
+			(at 48.26 117.3984 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "laserSensor1.kicad_sch"
+			(at 48.26 133.9346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "laser1_interrupt" output
+			(at 48.26 121.92 180)
+			(uuid "dcc834e2-4f16-4f4c-a73d-1c8d1da07a88")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LASER_I2C" bidirectional
+			(at 72.39 125.73 0)
+			(uuid "a5936c09-e58e-4bfc-98ea-686f652a8080")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "laser1_xshut" input
+			(at 48.26 128.27 180)
+			(uuid "69ba193c-3d85-4c6d-aea0-c3f26ff69f3f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 48.26 90.17)
+		(size 24.13 16.51)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "aeebd40c-0da3-4061-9217-05e628ea219b")
+		(property "Sheetname" "laserSensor0"
+			(at 48.26 89.4584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "laserSensor0.kicad_sch"
+			(at 48.26 106.6296 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "laser0_interrupt" output
+			(at 48.26 97.79 180)
+			(uuid "39bb2d26-540c-4a15-a3d1-4cb93f922077")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "laser0_xshut" input
+			(at 48.26 104.14 180)
+			(uuid "92eedbc1-eeb9-40ff-972f-7e5e7093e4f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LASER_I2C" bidirectional
+			(at 72.39 100.33 0)
+			(uuid "912abbf8-1272-4811-b278-cef3830a6cb4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843"
+					(page "7")
+				)
+			)
+		)
+	)
+)
