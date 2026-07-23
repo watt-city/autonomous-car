@@ -16,6 +16,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 146.05) (xy 154.94 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c517587-efd9-409c-9154-55a99ea1c267")
+	)
+	(wire
+		(pts
 			(xy 71.12 149.86) (xy 115.57 149.86)
 		)
 		(stroke
@@ -23,16 +33,6 @@
 			(type default)
 		)
 		(uuid "0d712a8a-24cd-4f70-8813-3982bbbed6da")
-	)
-	(wire
-		(pts
-			(xy 71.12 165.1) (xy 115.57 165.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "12381dc7-4f79-402b-97e9-8a4856519db1")
 	)
 	(bus
 		(pts
@@ -46,13 +46,13 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 154.94) (xy 115.57 154.94)
+			(xy 144.78 92.71) (xy 152.4 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "15ddc8e2-fea0-4abd-a2ae-b5a81dbab68a")
+		(uuid "2931f77d-20ad-4205-bb24-98b9bddbf899")
 	)
 	(bus
 		(pts
@@ -76,6 +76,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 161.29) (xy 154.94 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c4dddbd-a025-453a-a7fe-51d6a2abbbc8")
+	)
+	(wire
+		(pts
 			(xy 71.12 128.27) (xy 115.57 128.27)
 		)
 		(stroke
@@ -83,6 +93,16 @@
 			(type default)
 		)
 		(uuid "5dfe65d7-5fa8-478f-9b79-8e735f56529f")
+	)
+	(wire
+		(pts
+			(xy 144.78 97.79) (xy 152.4 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6225335f-c9b4-4807-86b3-81f17f0ec8f1")
 	)
 	(wire
 		(pts
@@ -96,23 +116,83 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 157.48) (xy 115.57 157.48)
+			(xy 144.78 149.86) (xy 154.94 149.86)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9546bca3-25af-469c-a559-a1a8ad113ac5")
+		(uuid "6d8adf81-fa4c-4db6-863a-b8097f1c678c")
 	)
 	(wire
 		(pts
-			(xy 71.12 162.56) (xy 115.57 162.56)
+			(xy 144.78 95.25) (xy 152.4 95.25)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "959fb102-0cf6-4ba4-9219-e42abbc473ed")
+		(uuid "833525dd-3fa9-4a04-aed8-0dda99e428ab")
+	)
+	(wire
+		(pts
+			(xy 144.78 142.24) (xy 154.94 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8999b61e-0c88-400f-b235-2d8819a9ac5c")
+	)
+	(wire
+		(pts
+			(xy 144.78 153.67) (xy 154.94 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b8f6a44-9f89-49b9-831a-609c73169a6c")
+	)
+	(wire
+		(pts
+			(xy 144.78 157.48) (xy 154.94 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a64a39b5-0ce7-46db-b6a6-28acbf4d3817")
+	)
+	(wire
+		(pts
+			(xy 144.78 100.33) (xy 152.4 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b778be26-8376-4e9e-9bac-542698ec7624")
+	)
+	(wire
+		(pts
+			(xy 144.78 134.62) (xy 154.94 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bba043d3-ba74-46f5-9429-ea06064bd563")
+	)
+	(wire
+		(pts
+			(xy 144.78 90.17) (xy 152.4 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9608a52-a50a-44f4-b658-95259f154041")
 	)
 	(wire
 		(pts
@@ -123,6 +203,26 @@
 			(type default)
 		)
 		(uuid "d53b581a-b6c1-4a0c-bd48-934b1ed2f68d")
+	)
+	(wire
+		(pts
+			(xy 144.78 138.43) (xy 154.94 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e23a0fbf-f965-4bb8-94a1-d1a3cf269a7e")
+	)
+	(wire
+		(pts
+			(xy 144.78 165.1) (xy 154.94 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f23fa9a0-6e37-4dae-96a1-0b3da870e842")
 	)
 	(label "{USB_D+, USB_D-}"
 		(at 83.82 99.06 0)
@@ -202,49 +302,9 @@
 				(justify right)
 			)
 		)
-		(pin "laser1_interrupt" output
-			(at 71.12 154.94 0)
-			(uuid "2c7ebbc3-770b-4b75-99dd-45841c876e9d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "laser2_interrupt" output
-			(at 71.12 162.56 0)
-			(uuid "a6d9c124-d81d-4dd3-ac70-445ac695cd22")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "laser0_xshut" input
 			(at 71.12 149.86 0)
 			(uuid "99505683-8319-4050-a3e3-45d873eda2a1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "laser1_xshut" input
-			(at 71.12 157.48 0)
-			(uuid "3e93618e-3034-4b9a-b76c-663d73766bec")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "laser2_xshut" input
-			(at 71.12 165.1 0)
-			(uuid "71cd13e7-0bcc-4301-b39f-7b75adcd277d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -265,7 +325,7 @@
 		(instances
 			(project "watt_city_car_pcb"
 				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
-					(page "10")
+					(page "7")
 				)
 			)
 		)
@@ -327,8 +387,290 @@
 		)
 	)
 	(sheet
-		(at 115.57 81.28)
-		(size 29.21 88.9)
+		(at 154.94 132.08)
+		(size 21.59 35.56)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "6026e2c0-c856-4d62-a683-33317f198a22")
+		(property "Sheetname" "irArray"
+			(at 154.94 131.3684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "irArray.kicad_sch"
+			(at 154.94 168.2246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "QTR_CTRL_ODD" input
+			(at 154.94 134.62 180)
+			(uuid "91aa5bcd-8927-434e-941d-5f06a788e7e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT1" input
+			(at 154.94 138.43 180)
+			(uuid "ec96e8d6-3c1a-40ed-b9a6-b838d8916439")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT3" input
+			(at 154.94 142.24 180)
+			(uuid "d1a8f256-664f-4372-a428-b68298cf06c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT5" input
+			(at 154.94 146.05 180)
+			(uuid "b7b4b99e-0ddf-42a0-886f-8e9eaa6fb730")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT7" input
+			(at 154.94 149.86 180)
+			(uuid "8126a552-a85d-42f0-829c-5db26f1d70ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT9" input
+			(at 154.94 153.67 180)
+			(uuid "32a55ad5-b970-4a45-8108-cb175abbd200")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT11" input
+			(at 154.94 157.48 180)
+			(uuid "40709b05-7e67-4dea-89c6-5525e3f0c3ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT13" input
+			(at 154.94 161.29 180)
+			(uuid "3cb60163-1115-4964-af94-291f2903f40c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "QTR_OUT15" input
+			(at 154.94 165.1 180)
+			(uuid "c133946e-69ca-48df-8cd2-ae0de750711a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 152.4 86.36)
+		(size 40.64 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "7681b3d8-9a49-410e-a400-b25e360c4890")
+		(property "Sheetname" "motorController"
+			(at 152.4 85.6484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "motorController.kicad_sch"
+			(at 152.4 105.9946 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "channelA_left" input
+			(at 152.4 90.17 180)
+			(uuid "721bde91-b7f7-4daa-9d63-1751f7672c3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "channelA_right" input
+			(at 193.04 90.17 0)
+			(uuid "bfa836a5-8553-4e2e-b001-fd602c5fe958")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "channelB_left" input
+			(at 152.4 92.71 180)
+			(uuid "81e92534-5250-46ae-b546-ddf6062b278f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "channelB_right" input
+			(at 193.04 92.71 0)
+			(uuid "51eadde4-36ed-4cc8-9938-6b6b06299eae")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "dir1_left" input
+			(at 152.4 95.25 180)
+			(uuid "b1aa7107-429c-4cf6-991d-4b501e3dbab1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "dir1_right" input
+			(at 193.04 95.25 0)
+			(uuid "6cadbcc3-e22f-4f23-ab95-ecdc53d06617")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "dir2_left" input
+			(at 152.4 97.79 180)
+			(uuid "f4659461-0a93-4977-89b7-9438f4c66ba0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "dir2_right" input
+			(at 193.04 97.79 0)
+			(uuid "16fdbaf5-49bd-4210-988a-e6230a58ce25")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "pwm_left" input
+			(at 152.4 100.33 180)
+			(uuid "456c3c7f-f40f-4199-87e7-6f581a28ad7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "pwm_right" input
+			(at 193.04 100.33 0)
+			(uuid "afacadb1-5c9c-4aa3-836d-5ac37a372109")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 115.57 49.53)
+		(size 29.21 120.65)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -343,7 +685,7 @@
 		)
 		(uuid "a8180eac-1fe6-471d-af74-2ff2812aea69")
 		(property "Sheetname" "microcontroller"
-			(at 115.57 80.5684 0)
+			(at 115.57 48.8184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -424,46 +766,6 @@
 				(justify left)
 			)
 		)
-		(pin "laser1_interrupt" input
-			(at 115.57 154.94 180)
-			(uuid "df959eaa-3fb3-41e0-b1e8-50f1ac652c79")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "laser1_xshut" output
-			(at 115.57 157.48 180)
-			(uuid "e55bcfe0-0d46-4504-bc3f-3b7d57f103c7")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "laser2_interrupt" input
-			(at 115.57 162.56 180)
-			(uuid "84c36adb-916a-4777-a6d9-6ec0031bd67f")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "laser2_xshut" output
-			(at 115.57 165.1 180)
-			(uuid "9ba12990-a6a1-4c50-bde6-ec4bdfccd40b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(pin "LASER_I2C" bidirectional
 			(at 115.57 140.97 180)
 			(uuid "1f247293-2f9d-4c19-9cf1-ad8a832bb0e4")
@@ -472,6 +774,196 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+		(pin "channelA_left" output
+			(at 144.78 90.17 0)
+			(uuid "23b486f8-20a0-440b-9a72-9e32b4e3995f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "channelA_right" output
+			(at 144.78 115.57 0)
+			(uuid "895d2dd6-1180-4f34-bdbf-8acf2bbe1d5f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "channelB_left" output
+			(at 144.78 92.71 0)
+			(uuid "2f18e225-b9fb-4bc4-9faa-3af045cdc766")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "channelB_right" output
+			(at 144.78 118.11 0)
+			(uuid "dae69226-c13e-4387-88f6-477cab0a8677")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "dir1_left" output
+			(at 144.78 95.25 0)
+			(uuid "8a5378a1-22ff-49dc-afdf-a8bd2858a2e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "dir1_right" output
+			(at 144.78 120.65 0)
+			(uuid "902b6f6b-a88e-4840-a424-7598917da2d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "dir2_left" output
+			(at 144.78 97.79 0)
+			(uuid "095bedd9-f06c-4f06-8377-e46d86c02e28")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "dir2_right" output
+			(at 144.78 123.19 0)
+			(uuid "e669b61e-e68a-4e80-a531-aaa9b0ff4b48")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "pwm_left" output
+			(at 144.78 100.33 0)
+			(uuid "ec2cd6ee-aebc-45f1-b6ab-7cfa9a15ec13")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "pwm_right" output
+			(at 144.78 125.73 0)
+			(uuid "3b3d2907-7e84-4130-9507-6d2d21f7c2f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_CTRL_ODD" input
+			(at 144.78 134.62 0)
+			(uuid "cb3362a7-8c9a-4ff0-bf6f-366d709bd631")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT1" input
+			(at 144.78 138.43 0)
+			(uuid "0b696614-543a-4919-ab2f-42567fe60550")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT3" input
+			(at 144.78 142.24 0)
+			(uuid "9085c80f-3908-4071-9867-f49be080376c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT5" input
+			(at 144.78 146.05 0)
+			(uuid "cc5a701d-498b-443a-9012-7b36ca6c65f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT7" input
+			(at 144.78 149.86 0)
+			(uuid "8c9db203-9d71-4f2e-b56e-0fe80aa827a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT9" input
+			(at 144.78 153.67 0)
+			(uuid "c57c85cd-88b1-4149-9001-a44d2b65c1fc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT11" input
+			(at 144.78 157.48 0)
+			(uuid "d2d95897-5b65-4241-a0d4-3dfdffca6930")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT13" input
+			(at 144.78 161.29 0)
+			(uuid "e4fb8733-c8ce-4f76-93b2-5e18b61f7021")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "QTR_OUT15" input
+			(at 144.78 165.1 0)
+			(uuid "ca52ece7-8963-4331-b75e-1add4b7b463d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances

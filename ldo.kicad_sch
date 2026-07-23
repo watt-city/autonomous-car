@@ -1303,6 +1303,17 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "P=(V_IN-V_OUT)*I_LOAD\nfresh battery: ~5.6V\nV_delta = 5.6-3.3=2.3V\nESP draws ~200mA when running BLE:\nP=2.3V*0.2A=0.46W\n~80-90C"
+		(exclude_from_sim no)
+		(at 173.228 105.156 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+		)
+		(uuid "7b4b7aed-e5ce-41fa-8f8f-f9d638ac1014")
+	)
 	(junction
 		(at 105.41 120.65)
 		(diameter 0)
@@ -1508,7 +1519,7 @@
 		)
 		(uuid "a40dbf6f-8800-405f-9a32-bd93be54ce1c")
 	)
-	(hierarchical_label "+5V_USB"
+	(hierarchical_label "+5V_prot"
 		(shape input)
 		(at 85.09 133.35 180)
 		(effects

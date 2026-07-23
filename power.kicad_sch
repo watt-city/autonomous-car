@@ -146,6 +146,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+5V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power global)
 			(pin_numbers
@@ -262,6 +401,12 @@
 			(embedded_fonts no)
 		)
 	)
+	(junction
+		(at 176.53 128.27)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06e26245-362c-4901-9fc0-a5ca2b831ece")
+	)
 	(wire
 		(pts
 			(xy 121.92 91.44) (xy 129.54 91.44)
@@ -284,13 +429,23 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 128.27) (xy 147.32 128.27)
+			(xy 104.14 128.27) (xy 143.51 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "36606388-4c9f-4a52-bf60-e0b3ec3a7f7d")
+	)
+	(wire
+		(pts
+			(xy 172.72 128.27) (xy 176.53 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "506ee22b-4dce-4ab3-892c-c1f3073ee5ea")
 	)
 	(wire
 		(pts
@@ -304,23 +459,33 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 124.46) (xy 147.32 124.46)
+			(xy 190.5 124.46) (xy 198.12 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d0d4608a-9290-4b7c-b031-d7544bef4098")
+		(uuid "e50dd498-b919-4439-80c8-6550a60afc4f")
+	)
+	(wire
+		(pts
+			(xy 176.53 128.27) (xy 198.12 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcceeead-00c1-452a-9f3c-e80c5af54127")
 	)
 	(label "VBATT"
-		(at 138.43 124.46 0)
+		(at 190.5 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "2fabb595-3151-46b4-a0fe-719aed6781e5")
+		(uuid "7425b23e-9375-4abd-ade5-99fa2d0ed9a9")
 	)
 	(label "{USB_D+, USB_D-}"
 		(at 106.68 138.43 0)
@@ -589,8 +754,152 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 176.53 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef4d4ad7-3e1f-4ccd-bc79-58f6bb074fdd")
+		(property "Reference" "#PWR06"
+			(at 176.53 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 176.53 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 176.53 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 176.53 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 176.53 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b4e2b96a-4612-4fb4-9c45-1e55120e842d")
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
+					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
-		(at 147.32 119.38)
+		(at 143.51 121.92)
+		(size 29.21 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "11e678e9-11ad-4329-aadb-e9f493068a12")
+		(property "Sheetname" "powerProtection"
+			(at 143.51 121.2084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "powerProtection.kicad_sch"
+			(at 143.51 137.7446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "+5V_prot" input
+			(at 172.72 128.27 0)
+			(uuid "f9a45f45-4e7b-489f-b4c2-9aa5f48cecaf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+5V_USB" input
+			(at 143.51 128.27 180)
+			(uuid "9cb63258-c420-4e48-a2d2-80c47c7f5cea")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 198.12 119.38)
 		(size 34.29 19.05)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -606,7 +915,7 @@
 		)
 		(uuid "81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0")
 		(property "Sheetname" "ldo"
-			(at 147.32 118.6684 0)
+			(at 198.12 118.6684 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -617,7 +926,7 @@
 			)
 		)
 		(property "Sheetfile" "ldo.kicad_sch"
-			(at 147.32 139.0146 0)
+			(at 198.12 139.0146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -628,7 +937,7 @@
 			)
 		)
 		(property "Field2" ""
-			(at 147.32 119.38 0)
+			(at 198.12 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -639,7 +948,7 @@
 			)
 		)
 		(pin "VBATT" input
-			(at 147.32 124.46 180)
+			(at 198.12 124.46 180)
 			(uuid "d325ab1e-7756-4af5-aa12-309dab58dff9")
 			(effects
 				(font
@@ -648,9 +957,9 @@
 				(justify left)
 			)
 		)
-		(pin "+5V_USB" input
-			(at 147.32 128.27 180)
-			(uuid "68a58bcb-7f1f-4f96-942d-f3575a5c6a63")
+		(pin "+5V_prot" input
+			(at 198.12 128.27 180)
+			(uuid "e361fa7a-270a-4a8f-90d6-ac7a35a79f6a")
 			(effects
 				(font
 					(size 1.27 1.27)
