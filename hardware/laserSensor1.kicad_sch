@@ -2,10 +2,10 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "edfd8066-d3c8-474a-b57a-25c3c7ca7a94")
+	(uuid "a498fdeb-8a8f-4e5d-86ca-deb2847ce840")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Regulator_Linear:AP2112K-3.3"
+		(symbol "VL53L0CXV0DH/1:VL53L0CXV0DH_1"
 			(pin_names
 				(offset 0.254)
 			)
@@ -15,50 +15,50 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "U"
-				(at -5.08 5.715 0)
+				(at 25.4 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "AP2112K-3.3"
-				(at 0 5.715 0)
+			(property "Value" "VL53L0CXV0DH/1"
+				(at 25.4 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
-				(at 0 8.255 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP2112.pdf"
-				(at 0 2.54 0)
+			(property "Footprint" "LGA12_STM"
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
+						(italic yes)
 					)
 				)
 			)
-			(property "Description" "600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5"
+			(property "Datasheet" "https://www.st.com/resource/en/datasheet/vl53l0x.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Description" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -69,7 +69,17 @@
 					)
 				)
 			)
-			(property "ki_keywords" "linear regulator ldo fixed positive"
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "VL53L0CXV0DH/1"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -80,7 +90,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "SOT?23?5*"
+			(property "ki_fp_filters" "LGA12_STM LGA12_STM-M LGA12_STM-L"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -91,24 +101,59 @@
 					)
 				)
 			)
-			(symbol "AP2112K-3.3_0_1"
-				(rectangle
-					(start -5.08 4.445)
-					(end 5.08 -5.08)
+			(symbol "VL53L0CXV0DH_1_0_1"
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -17.78)
+					)
 					(stroke
-						(width 0.254)
+						(width 0.127)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
 					)
 				)
-			)
-			(symbol "AP2112K-3.3_1_1"
+				(polyline
+					(pts
+						(xy 7.62 -17.78) (xy 43.18 -17.78)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 43.18 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 43.18 -17.78) (xy 43.18 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin power_in line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "VIN"
+					(at 0 0 0)
+					(length 7.62)
+					(name "AVDDVCSEL"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -124,9 +169,9 @@
 					)
 				)
 				(pin power_in line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "GND"
+					(at 0 -2.54 0)
+					(length 7.62)
+					(name "AVSSVCSEL"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -141,10 +186,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "EN"
+				(pin power_in line
+					(at 0 -5.08 0)
+					(length 7.62)
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -159,11 +204,10 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at 5.08 0 180)
-					(length 2.54)
-					(hide yes)
-					(name "NC"
+				(pin power_in line
+					(at 0 -7.62 0)
+					(length 7.62)
+					(name "GND2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -178,10 +222,10 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "VOUT"
+				(pin input line
+					(at 0 -10.16 0)
+					(length 7.62)
+					(name "XSHUT"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -196,10 +240,136 @@
 						)
 					)
 				)
+				(pin power_in line
+					(at 0 -12.7 0)
+					(length 7.62)
+					(name "GND3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 50.8 -12.7 180)
+					(length 7.62)
+					(name "GPIO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 50.8 -10.16 180)
+					(length 7.62)
+					(name "DNC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 50.8 -7.62 180)
+					(length 7.62)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 50.8 -5.08 180)
+					(length 7.62)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 50.8 -2.54 180)
+					(length 7.62)
+					(name "AVDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 50.8 0 180)
+					(length 7.62)
+					(name "GND4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bfr_capacitors:CL10A106KP8NNNC"
+		(symbol "bfr_capacitors:06035C104KAT2A"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -216,7 +386,7 @@
 					(justify right)
 				)
 			)
-			(property "Value" "10u"
+			(property "Value" "100n"
 				(at 1.27 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -238,7 +408,7 @@
 					)
 				)
 			)
-			(property "Datasheet" ""
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C14663.pdf"
 				(at 0 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -249,7 +419,7 @@
 					)
 				)
 			)
-			(property "Description" "10uF±10% X5R 10V JLCPCB Basic 0603 Capacitor"
+			(property "Description" "100nF±10% X7R 16V JLCPCB Basic 0603 Capacitor"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -282,7 +452,7 @@
 					)
 				)
 			)
-			(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/CL10A106KP8NNNC.lib"
+			(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/06035C104KAT2A.lib"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -293,7 +463,7 @@
 					)
 				)
 			)
-			(property "Sim.Name" "CL10A106KP8NNNC"
+			(property "Sim.Name" "06035C104KAT2A"
 				(at 0 -8.89 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -304,7 +474,7 @@
 					)
 				)
 			)
-			(property "Pretty Name" "10uF X5R 10V 0603 Capacitor"
+			(property "Pretty Name" "100nF 16V 0603 Capacitor"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -348,7 +518,7 @@
 					)
 				)
 			)
-			(property "Digikey P/N" ""
+			(property "Digikey P/N" "478-KGM15BR71H104KTCT-ND"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -359,7 +529,7 @@
 					)
 				)
 			)
-			(property "Mouser P/N" ""
+			(property "Mouser P/N" "581-06035C104KAT2A"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -370,7 +540,7 @@
 					)
 				)
 			)
-			(property "LCSC P/N" "C19702"
+			(property "LCSC P/N" "C14663"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -392,7 +562,7 @@
 					)
 				)
 			)
-			(property "Created by" "capacitor_generator.py script using jlcbasic_additional_capacitor_spec.txt"
+			(property "Created by" "capacitor_generator.py script using capacitor_bible_spec.txt"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -403,7 +573,7 @@
 					)
 				)
 			)
-			(symbol "CL10A106KP8NNNC_0_1"
+			(symbol "06035C104KAT2A_0_1"
 				(polyline
 					(pts
 						(xy -2.032 0.762) (xy 2.032 0.762)
@@ -429,7 +599,7 @@
 					)
 				)
 			)
-			(symbol "CL10A106KP8NNNC_1_1"
+			(symbol "06035C104KAT2A_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 2.794)
@@ -739,12 +909,8 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "bfr_diodes:1N5819WS"
+		(symbol "bfr_resistors:RMCF0603FT10K0"
 			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -752,7 +918,7 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "D"
+			(property "Reference" "R"
 				(at 0 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -760,20 +926,33 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Value" "600m"
+			(property "Value" "10k"
+				(at 1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
-				(at 0 3.81 0)
+			(property "Datasheet" "https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf"
+				(at 0 -3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -783,129 +962,8 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "JLC Basic 1A 600mV SOD-323 Schottky Diode"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "LCSC P/N" "C191023"
-				(at -0.254 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Digikey P/N" "5272-B5819WSCT-ND"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Mouser P/N" "833-B5819WS-TP"
-				(at -0.254 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Order From" "LCSC"
-				(at 0 4.064 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "JLCPCB Basic Part" "Yes"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Qty/Unit" ""
+			(property "Description" "10kΩ 0603 JLCPCB Basic Resistor"
 				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Cost/Unit" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Pretty Name" "1A SOD-323 Schottky Diode"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Library" "${BFRUH_DIR}\\Electronics\\spice_models\\bfr_diodes\\1N5819WS.lib"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Sim.Name" "1N5819WS"
-				(at -0.254 3.81 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -916,7 +974,7 @@
 				)
 			)
 			(property "Sim.Device" "SUBCKT"
-				(at 0 3.81 0)
+				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -926,8 +984,8 @@
 					)
 				)
 			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at -0.254 3.81 0)
+			(property "Sim.Pins" "1=P1 2=P2"
+				(at 0 -6.35 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -937,8 +995,8 @@
 					)
 				)
 			)
-			(property "Created by" "Manual Entry"
-				(at 0 3.81 0)
+			(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_resistors/RMCF0603FT10K0.lib"
+				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -948,8 +1006,8 @@
 					)
 				)
 			)
-			(property "ki_keywords" "JLC Basic diode Schottky"
-				(at 0 0 0)
+			(property "Sim.Name" "RMCF0603FT10K0"
+				(at 0 -8.89 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -959,8 +1017,8 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
-				(at 0 0 0)
+			(property "Pretty Name" "10kΩ 0603 Resistor"
+				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -970,13 +1028,101 @@
 					)
 				)
 			)
-			(symbol "1N5819WS_0_1"
+			(property "Qty/Unit" ""
+				(at 0 -11.43 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Cost/Unit" ""
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Order From" "LCSC"
+				(at 0 -13.97 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Digikey P/N" "RMCF0603FT10K0CT-ND"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Mouser P/N" "708-RMCF0603FT10K0"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC P/N" "C25804"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "JLCPCB Basic Part" "Yes"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Created by" "resistor_generator.py script using e24_resistor_bible_spec.txt"
+				(at 0 -15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "RMCF0603FT10K0_0_1"
 				(polyline
 					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+						(xy -2.286 0) (xy -2.54 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -985,10 +1131,10 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+						(xy -2.286 0) (xy -1.905 1.016) (xy -1.524 0) (xy -1.143 -1.016) (xy -0.762 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -997,7 +1143,31 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy -0.762 0) (xy -0.381 1.016) (xy 0 0) (xy 0.381 -1.016) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0) (xy 1.143 1.016) (xy 1.524 0) (xy 1.905 -1.016) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 2.54 0)
 					)
 					(stroke
 						(width 0)
@@ -1008,11 +1178,11 @@
 					)
 				)
 			)
-			(symbol "1N5819WS_1_1"
+			(symbol "RMCF0603FT10K0_1_1"
 				(pin passive line
 					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
+					(length 1.27)
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1029,8 +1199,8 @@
 				)
 				(pin passive line
 					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
+					(length 1.27)
+					(name ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1303,461 +1473,480 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "P=(V_IN-V_OUT)*I_LOAD\nfresh battery: ~5.6V\nV_delta = 5.6-3.3=2.3V\nESP draws ~200mA when running BLE:\nP=2.3V*0.2A=0.46W\n~80-90C"
-		(exclude_from_sim no)
-		(at 173.228 105.156 0)
+	(junction
+		(at 73.66 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1b973b7f-6fe9-4096-8f2e-cd31932baaed")
+	)
+	(junction
+		(at 97.79 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "32130d2c-ba2c-47f8-a545-d0c2ece8b6a4")
+	)
+	(junction
+		(at 152.4 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "57ad9765-aab9-4d59-a093-f4951d378993")
+	)
+	(junction
+		(at 92.71 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7bc0199f-a7df-4e7d-8151-4d4f09e3e772")
+	)
+	(junction
+		(at 81.28 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9389aacd-47f9-4a20-a373-ab66d4cd1a27")
+	)
+	(junction
+		(at 71.12 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a9796700-d68e-49f2-af22-ef0af2928737")
+	)
+	(junction
+		(at 81.28 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b7caeecc-27de-4449-b814-de4e3ff22e5c")
+	)
+	(junction
+		(at 95.25 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4029009-30f7-43f3-ad16-0c7d46705587")
+	)
+	(junction
+		(at 92.71 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4d63ccb-1179-4647-8e2a-e3a31c12268b")
+	)
+	(junction
+		(at 73.66 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f3b8e63a-489f-47de-a460-9411a01c2956")
+	)
+	(bus_entry
+		(at 176.53 110.49)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1645c3b4-fd84-4300-83f2-8acc8d506095")
+	)
+	(bus_entry
+		(at 176.53 105.41)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1881286e-98a5-4bd7-b58c-fefcc65e6114")
+	)
+	(wire
+		(pts
+			(xy 95.25 118.11) (xy 95.25 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "116f40f3-ec54-415a-8105-73a2fcf89891")
+	)
+	(wire
+		(pts
+			(xy 81.28 101.6) (xy 97.79 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "122e8082-3daa-4578-b6e7-6c7d8354ecf0")
+	)
+	(wire
+		(pts
+			(xy 152.4 114.3) (xy 162.56 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1df9e577-6ca3-4c11-a865-4bde5295611f")
+	)
+	(wire
+		(pts
+			(xy 95.25 111.76) (xy 99.06 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "366e30a1-1a98-4c68-873c-8f364a73863b")
+	)
+	(wire
+		(pts
+			(xy 149.86 109.22) (xy 176.53 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37f1faa0-de06-4381-adaa-293a565ec550")
+	)
+	(wire
+		(pts
+			(xy 149.86 101.6) (xy 149.86 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39206fd5-e27e-477f-8ec4-7bd11a231cf4")
+	)
+	(wire
+		(pts
+			(xy 149.86 106.68) (xy 176.53 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b4976dc-dbb1-4ab3-87c8-760604fcc94a")
+	)
+	(wire
+		(pts
+			(xy 148.59 123.19) (xy 152.4 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b6c74be-e98a-48c4-8f2e-62ecd70e30ab")
+	)
+	(wire
+		(pts
+			(xy 149.86 104.14) (xy 156.21 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bb07e94-544c-444d-8133-31a96fb0549c")
+	)
+	(wire
+		(pts
+			(xy 99.06 104.14) (xy 92.71 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50f0afcd-602c-4025-b8bc-3439ddafb4a8")
+	)
+	(wire
+		(pts
+			(xy 73.66 109.22) (xy 81.28 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56b9788c-9ade-4574-9afd-d47a66870ec1")
+	)
+	(wire
+		(pts
+			(xy 156.21 104.14) (xy 156.21 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58da79e4-cf80-42f9-a936-a55acecf71e0")
+	)
+	(wire
+		(pts
+			(xy 86.36 111.76) (xy 85.09 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "598e5e67-5677-4d63-9a82-3ab3bbb93f6d")
+	)
+	(wire
+		(pts
+			(xy 73.66 123.19) (xy 99.06 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64b1bd44-934e-424c-9b33-52639ee12548")
+	)
+	(wire
+		(pts
+			(xy 99.06 123.19) (xy 99.06 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67e7e7f1-b8b9-49d7-a1d7-0dd3334e8b26")
+	)
+	(wire
+		(pts
+			(xy 92.71 104.14) (xy 92.71 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d926892-a736-4921-9a1c-c0037b4d8cd3")
+	)
+	(wire
+		(pts
+			(xy 97.79 78.74) (xy 97.79 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "746f84e4-6073-4572-a328-2774449b61c2")
+	)
+	(wire
+		(pts
+			(xy 99.06 106.68) (xy 92.71 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "766c6f8e-5072-4050-8eb1-0583ecbd8300")
+	)
+	(wire
+		(pts
+			(xy 71.12 109.22) (xy 73.66 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78eb4990-6828-4904-8595-0176e1ee24ec")
+	)
+	(wire
+		(pts
+			(xy 81.28 109.22) (xy 92.71 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bbfad04-9382-4054-b60b-e846478a6f06")
+	)
+	(wire
+		(pts
+			(xy 92.71 106.68) (xy 92.71 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ec4c7ff-e1d0-4c5a-aa6e-192ebfb68a20")
+	)
+	(wire
+		(pts
+			(xy 176.53 109.22) (xy 176.53 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8468b1a1-c6b4-4778-a717-cec0593b68e6")
+	)
+	(wire
+		(pts
+			(xy 73.66 109.22) (xy 73.66 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84edb25e-662f-44ad-ad6e-bd7f06516883")
+	)
+	(wire
+		(pts
+			(xy 91.44 118.11) (xy 95.25 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8900a942-3bf8-426c-ac45-b7c076e2fbee")
+	)
+	(wire
+		(pts
+			(xy 152.4 114.3) (xy 152.4 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9442b83f-caad-459f-ba34-04b9466502aa")
+	)
+	(wire
+		(pts
+			(xy 149.86 96.52) (xy 153.67 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98d87633-1f17-4fcf-bac3-46dbf6148fb9")
+	)
+	(wire
+		(pts
+			(xy 149.86 114.3) (xy 152.4 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a4470ab6-de00-4513-bdc4-0d1a7a3776d5")
+	)
+	(bus
+		(pts
+			(xy 179.07 107.95) (xy 224.79 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a62543fd-ffdf-4cd0-989b-8fa68b4d1857")
+	)
+	(wire
+		(pts
+			(xy 99.06 109.22) (xy 92.71 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a987eec0-6b2a-4521-ba92-693d68b60f8d")
+	)
+	(wire
+		(pts
+			(xy 156.21 78.74) (xy 97.79 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4b75e98-e744-4df4-b550-579f55b72371")
+	)
+	(wire
+		(pts
+			(xy 176.53 105.41) (xy 176.53 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5395030-ab96-44b1-b89c-816cb65ac070")
+	)
+	(wire
+		(pts
+			(xy 71.12 101.6) (xy 81.28 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dadaa0c4-5178-4143-905f-4b812d0bd2b1")
+	)
+	(wire
+		(pts
+			(xy 97.79 101.6) (xy 99.06 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddbbeb71-5aa7-44bc-93aa-bc75efa5c53e")
+	)
+	(wire
+		(pts
+			(xy 67.31 101.6) (xy 71.12 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e52aa1fc-0558-41fc-b99e-adea32e9a672")
+	)
+	(wire
+		(pts
+			(xy 93.98 111.76) (xy 95.25 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8754a7e-cd9a-4e41-bade-506a05d65b53")
+	)
+	(label "LASER_I2C{LASER_I2C_SCL, LASER_I2C_SDA}"
+		(at 180.34 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
-				(thickness 0.1588)
 			)
+			(justify left bottom)
 		)
-		(uuid "7b4b7aed-e5ce-41fa-8f8f-f9d638ac1014")
+		(uuid "0a892953-d262-4903-9817-2f28c1ccd76b")
 	)
-	(junction
-		(at 105.41 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1e291ed9-4158-4008-b4a9-092c1df52369")
+	(hierarchical_label "laser1_interrupt"
+		(shape output)
+		(at 162.56 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1bb44838-2214-4626-9199-d8058d64ea0d")
 	)
-	(junction
-		(at 146.05 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3df2fbdc-6c34-4320-afa6-0a866df7b831")
+	(hierarchical_label "LASER_I2C"
+		(shape bidirectional)
+		(at 224.79 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "240ec403-ca1f-47d7-bf51-a1cc45d7aafa")
 	)
-	(junction
-		(at 113.03 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4e6ba520-992e-4a74-9adc-6530213a5b61")
-	)
-	(junction
-		(at 118.11 120.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b64a08d9-31e0-44c2-9fa0-aebe3c91cf97")
-	)
-	(wire
-		(pts
-			(xy 137.16 120.65) (xy 146.05 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0681dccb-5cb2-497f-ae3f-3af8b8fb17e9")
-	)
-	(wire
-		(pts
-			(xy 101.6 133.35) (xy 105.41 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29b0e26f-9e5d-487d-8d57-a98e219a8840")
-	)
-	(wire
-		(pts
-			(xy 85.09 133.35) (xy 93.98 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4091644b-e9b1-4ba0-a1d0-ad26f70962fe")
-	)
-	(wire
-		(pts
-			(xy 146.05 130.81) (xy 146.05 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "528c85c0-d5a5-4c57-a5ab-c5af77fc037d")
-	)
-	(wire
-		(pts
-			(xy 83.82 120.65) (xy 93.98 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6596d48d-522a-46ac-905b-5ff431a4feaf")
-	)
-	(wire
-		(pts
-			(xy 118.11 120.65) (xy 121.92 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b4ac236-d10d-4f31-ae5e-673de79af361")
-	)
-	(wire
-		(pts
-			(xy 113.03 120.65) (xy 118.11 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7774d449-c203-40d0-90ab-49c6e65fb00f")
-	)
-	(wire
-		(pts
-			(xy 105.41 120.65) (xy 113.03 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8daf4dd3-93ea-4217-b92c-a074a5f11761")
-	)
-	(wire
-		(pts
-			(xy 146.05 120.65) (xy 153.67 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "946e484a-e933-492f-9a98-9c83c0bed55d")
-	)
-	(wire
-		(pts
-			(xy 113.03 120.65) (xy 113.03 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9d12680b-cde6-4a10-97f1-832e0de4747f")
-	)
-	(wire
-		(pts
-			(xy 105.41 133.35) (xy 105.41 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fafc367-e436-4344-8a2d-c4b0353ddf43")
-	)
-	(wire
-		(pts
-			(xy 101.6 120.65) (xy 105.41 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a07d20b7-8576-4857-b897-a20e6a3e8145")
-	)
-	(wire
-		(pts
-			(xy 129.54 130.81) (xy 129.54 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a860459f-cca3-43cd-a2ef-7d7eb3b5b474")
-	)
-	(wire
-		(pts
-			(xy 118.11 123.19) (xy 118.11 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aafebbf9-20f2-4f92-8d79-f140f38beaea")
-	)
-	(wire
-		(pts
-			(xy 121.92 123.19) (xy 118.11 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e14c919c-2452-4f8d-947a-58d4b13b81d7")
-	)
-	(wire
-		(pts
-			(xy 113.03 130.81) (xy 113.03 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f51e07da-a8ea-4c43-9a27-e3f3cc636f19")
-	)
-	(wire
-		(pts
-			(xy 146.05 120.65) (xy 146.05 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd756e71-918d-4ece-b3e7-86ff666a553f")
-	)
-	(hierarchical_label "VBATT"
+	(hierarchical_label "laser1_xshut"
 		(shape input)
-		(at 83.82 120.65 180)
+		(at 91.44 118.11 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "a40dbf6f-8800-405f-9a32-bd93be54ce1c")
-	)
-	(hierarchical_label "+5V_prot"
-		(shape input)
-		(at 85.09 133.35 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b5cebb17-262d-48d9-947d-8dea668f7906")
-	)
-	(symbol
-		(lib_id "bfr_capacitors:CL10A106KP8NNNC")
-		(at 146.05 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "07eb60a3-3df5-4fb2-b8d0-4e439ece3c69")
-		(property "Reference" "C404"
-			(at 149.86 125.7299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10u"
-			(at 149.86 128.2699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 146.05 129.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 146.05 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "10uF±10% X5R 10V JLCPCB Basic 0603 Capacitor"
-			(at 146.05 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "SUBCKT"
-			(at 146.05 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=P1 2=P2"
-			(at 146.05 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/CL10A106KP8NNNC.lib"
-			(at 146.05 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "CL10A106KP8NNNC"
-			(at 146.05 135.89 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Pretty Name" "10uF X5R 10V 0603 Capacitor"
-			(at 146.05 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Qty/Unit" ""
-			(at 146.05 138.43 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Cost/Unit" ""
-			(at 146.05 139.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Order From" "LCSC"
-			(at 146.05 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Digikey P/N" ""
-			(at 146.05 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser P/N" ""
-			(at 146.05 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C19702"
-			(at 146.05 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "JLCPCB Basic Part" "Yes"
-			(at 146.05 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Created by" "capacitor_generator.py script using jlcbasic_additional_capacitor_spec.txt"
-			(at 146.05 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "14d5d0b7-2b67-427b-9f51-ba2780a76e0e")
-		)
-		(pin "1"
-			(uuid "c760ced4-88f3-4ead-9ace-d603cbcc24ec")
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "C404")
-					(unit 1)
-				)
-			)
-		)
+		(uuid "a462a521-aacc-4735-aae0-eaa662f88516")
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 153.67 120.65 0)
+		(at 148.59 123.19 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1765,10 +1954,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1cce2143-3121-41ea-a0ad-4d0b20b8cba2")
-		(property "Reference" "#PWR0401"
-			(at 153.67 124.46 0)
+		(uuid "2490ba5a-7308-4990-8f12-b1f17cb536ee")
+		(property "Reference" "#PWR0109"
+			(at 148.59 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1779,7 +1967,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 153.67 115.57 0)
+			(at 143.51 122.936 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1789,7 +1977,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 153.67 120.65 0)
+			(at 148.59 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1800,7 +1988,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 153.67 120.65 0)
+			(at 148.59 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1811,7 +1999,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 153.67 120.65 0)
+			(at 148.59 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1822,20 +2010,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "d525239a-d299-4c96-b787-0e0736754373")
+			(uuid "3dcb4e43-f2e3-4d3d-bee3-d5cdbff31eff")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR0401")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Regulator_Linear:AP2112K-3.3")
-		(at 129.54 123.19 0)
+		(lib_id "power:+3.3V")
+		(at 67.31 101.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1844,29 +2032,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "5b31d744-6ccf-4de3-982c-dce7bdac24ee")
-		(property "Reference" "U402"
-			(at 129.54 114.3 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AP2112K-3.3"
-			(at 129.54 116.84 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
-			(at 129.54 114.935 0)
+		(uuid "2d2d2c10-4335-475d-ae27-c9b01466dc7b")
+		(property "Reference" "#PWR0106"
+			(at 67.31 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1876,8 +2044,18 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AP2112.pdf"
-			(at 129.54 120.65 0)
+		(property "Value" "+3.3V"
+			(at 67.31 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 67.31 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1887,8 +2065,19 @@
 				)
 			)
 		)
-		(property "Description" "600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5"
-			(at 129.54 123.19 0)
+		(property "Datasheet" ""
+			(at 67.31 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 67.31 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1899,24 +2088,124 @@
 			)
 		)
 		(pin "1"
-			(uuid "586cb572-9f39-4afb-95e7-aefc92e69ea0")
-		)
-		(pin "4"
-			(uuid "49b4c08a-63c2-4958-84ce-c86dfb9d12ef")
-		)
-		(pin "2"
-			(uuid "49c37fe4-c304-4a95-a144-ccf9dd341878")
-		)
-		(pin "3"
-			(uuid "581d1d33-68d6-481f-9a70-b04db79eb674")
-		)
-		(pin "5"
-			(uuid "c93f32b1-20ea-4ea6-982d-cb3943ed3a53")
+			(uuid "0c38de2e-7730-4581-a614-fbef455fae55")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "U402")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "#PWR0106")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "VL53L0CXV0DH/1:VL53L0CXV0DH_1")
+		(at 99.06 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3c71776e-5458-46d0-952b-dd687f7bd17b")
+		(property "Reference" "U102"
+			(at 124.46 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "VL53L0CXV0DH/1"
+			(at 124.46 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LGA12_STM"
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/vl53l0x.pdf"
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "2d233f36-770b-42ec-acb2-1f8d11163809")
+		)
+		(pin "1"
+			(uuid "d095d4a2-cf55-478a-bf04-16cb24b1b1fe")
+		)
+		(pin "6"
+			(uuid "8401606a-9ad0-412d-a686-6847d1dfcf2f")
+		)
+		(pin "7"
+			(uuid "fb2bee6e-8c23-46a8-8faa-a81290eb4da6")
+		)
+		(pin "4"
+			(uuid "39c75a91-e798-43d9-83d7-5177fcbe3a59")
+		)
+		(pin "8"
+			(uuid "36f3766a-aec0-494a-a7f5-341dfac36e3a")
+		)
+		(pin "9"
+			(uuid "9c3a5b91-705d-48ba-8779-903ae29aba3d")
+		)
+		(pin "12"
+			(uuid "41335b8b-b5f3-4229-865f-f1cdd07c196c")
+		)
+		(pin "10"
+			(uuid "f1d8fdf7-e0ed-4c0f-bbac-554a047fe570")
+		)
+		(pin "2"
+			(uuid "26d29702-4ac5-4421-849d-ab767a2ed4bb")
+		)
+		(pin "11"
+			(uuid "20d8e0fd-a9d3-4ed0-9099-b46fb8124f03")
+		)
+		(pin "5"
+			(uuid "39c68286-cd56-45be-b1fb-032cdd7e6c29")
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "U102")
 					(unit 1)
 				)
 			)
@@ -1924,7 +2213,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 113.03 133.35 0)
+		(at 153.67 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1933,9 +2222,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "64d88a7c-c3d2-4a88-aa96-4e339dd2898a")
-		(property "Reference" "#PWR0404"
-			(at 113.03 139.7 0)
+		(uuid "4348034a-3586-47ba-9438-2a6e7b9f5916")
+		(property "Reference" "#PWR0110"
+			(at 153.67 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1946,7 +2235,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 113.03 138.43 0)
+			(at 153.67 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1956,7 +2245,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 113.03 133.35 0)
+			(at 153.67 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1967,7 +2256,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 133.35 0)
+			(at 153.67 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1978,7 +2267,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 113.03 133.35 0)
+			(at 153.67 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1989,20 +2278,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "db2fb7c2-4264-4d7f-8c6d-9035e6119b29")
+			(uuid "f4d6f925-7f01-4b65-a242-274c0957d9de")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR0404")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "bfr_capacitors:KGM21AR51A475KU")
-		(at 113.03 127 0)
+		(lib_id "power:GND")
+		(at 85.09 111.76 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2011,31 +2300,30 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "83959a47-8e87-40ab-82c3-23bd82817816")
-		(property "Reference" "C403"
-			(at 116.84 125.7299 0)
+		(uuid "45ba2591-1ad0-4269-934c-6062ed344996")
+		(property "Reference" "#PWR01"
+			(at 85.09 118.11 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "4.7u"
-			(at 116.84 128.2699 0)
+		(property "Value" "GND"
+			(at 85.09 116.84 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 113.03 129.54 0)
+		(property "Footprint" ""
+			(at 85.09 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2046,7 +2334,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 130.81 0)
+			(at 85.09 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2056,8 +2344,87 @@
 				)
 			)
 		)
-		(property "Description" "4.7uF±10% X5R 10V JLCPCB Basic 0805 Capacitor"
-			(at 113.03 127 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 85.09 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "960bf387-602a-4079-9493-032ab3924691")
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bfr_capacitors:06035C104KAT2A")
+		(at 81.28 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7ae3f17f-0df8-430c-976d-8f172e9cb220")
+		(property "Reference" "C104"
+			(at 85.09 104.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 85.09 106.6799 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 81.28 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C14663.pdf"
+			(at 81.28 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "100nF±10% X7R 16V JLCPCB Basic 0603 Capacitor"
+			(at 81.28 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2068,7 +2435,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 113.03 132.08 0)
+			(at 81.28 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2079,7 +2446,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=P1 2=P2"
-			(at 113.03 133.35 0)
+			(at 81.28 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2089,8 +2456,8 @@
 				)
 			)
 		)
-		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/KGM21AR51A475KU.lib"
-			(at 113.03 134.62 0)
+		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/06035C104KAT2A.lib"
+			(at 81.28 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2100,8 +2467,8 @@
 				)
 			)
 		)
-		(property "Sim.Name" "KGM21AR51A475KU"
-			(at 113.03 135.89 0)
+		(property "Sim.Name" "06035C104KAT2A"
+			(at 81.28 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2111,8 +2478,8 @@
 				)
 			)
 		)
-		(property "Pretty Name" "4.7uF 10V 0805 Capacitor"
-			(at 113.03 137.16 0)
+		(property "Pretty Name" "100nF 16V 0603 Capacitor"
+			(at 81.28 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2123,7 +2490,7 @@
 			)
 		)
 		(property "Qty/Unit" ""
-			(at 113.03 138.43 0)
+			(at 81.28 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2134,7 +2501,7 @@
 			)
 		)
 		(property "Cost/Unit" ""
-			(at 113.03 139.7 0)
+			(at 81.28 118.11 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2145,7 +2512,7 @@
 			)
 		)
 		(property "Order From" "LCSC"
-			(at 113.03 140.97 0)
+			(at 81.28 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2155,8 +2522,8 @@
 				)
 			)
 		)
-		(property "Digikey P/N" "478-KGM21AR51A475KUCT-ND"
-			(at 113.03 142.24 0)
+		(property "Digikey P/N" "478-KGM15BR71H104KTCT-ND"
+			(at 81.28 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2166,8 +2533,8 @@
 				)
 			)
 		)
-		(property "Mouser P/N" "581-KGM21AR51A475KU"
-			(at 113.03 142.24 0)
+		(property "Mouser P/N" "581-06035C104KAT2A"
+			(at 81.28 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2177,8 +2544,8 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C1779"
-			(at 113.03 142.24 0)
+		(property "LCSC P/N" "C14663"
+			(at 81.28 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2189,7 +2556,7 @@
 			)
 		)
 		(property "JLCPCB Basic Part" "Yes"
-			(at 113.03 142.24 0)
+			(at 81.28 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2200,7 +2567,7 @@
 			)
 		)
 		(property "Created by" "capacitor_generator.py script using capacitor_bible_spec.txt"
-			(at 113.03 142.24 0)
+			(at 81.28 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2211,23 +2578,23 @@
 			)
 		)
 		(pin "2"
-			(uuid "a8b884f7-f8db-41da-9baf-a15a66151864")
+			(uuid "b86d1541-268c-4a9a-a14b-216130e801f8")
 		)
 		(pin "1"
-			(uuid "870345b8-a7d3-46d9-8ff9-6cfff8a606a9")
+			(uuid "4cf0cd26-12bf-4b31-91e2-e138e0c680ae")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "C403")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "C104")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "bfr_diodes:1N5819WS")
-		(at 97.79 120.65 180)
+		(lib_id "bfr_resistors:RMCF0603FT10K0")
+		(at 152.4 119.38 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2235,10 +2602,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "995bd8a6-81ef-454b-a6f3-090cf4c3caa9")
-		(property "Reference" "D401"
-			(at 98.1075 114.3 0)
+		(uuid "d8a8e712-61cd-47a0-bedd-3f009e33c25d")
+		(property "Reference" "R104"
+			(at 156.21 118.364 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2247,8 +2613,8 @@
 				)
 			)
 		)
-		(property "Value" "600m"
-			(at 98.1075 116.84 0)
+		(property "Value" "10k"
+			(at 156.21 120.904 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2257,8 +2623,8 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
-			(at 97.79 124.46 0)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 149.86 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2268,8 +2634,8 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 97.79 124.46 0)
+		(property "Datasheet" "https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf"
+			(at 148.59 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2279,118 +2645,8 @@
 				)
 			)
 		)
-		(property "Description" "JLC Basic 1A 600mV SOD-323 Schottky Diode"
-			(at 97.79 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C191023"
-			(at 98.044 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Digikey P/N" "5272-B5819WSCT-ND"
-			(at 97.79 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser P/N" "833-B5819WS-TP"
-			(at 98.044 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Order From" "LCSC"
-			(at 97.79 124.714 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "JLCPCB Basic Part" "Yes"
-			(at 97.79 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Qty/Unit" ""
-			(at 97.79 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Cost/Unit" ""
-			(at 97.79 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Pretty Name" "1A SOD-323 Schottky Diode"
-			(at 97.79 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Library" "${BFRUH_DIR}\\Electronics\\spice_models\\bfr_diodes\\1N5819WS.lib"
-			(at 97.79 124.46 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Name" "1N5819WS"
-			(at 98.044 124.46 0)
+		(property "Description" "10kΩ 0603 JLCPCB Basic Resistor"
+			(at 152.4 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2401,7 +2657,7 @@
 			)
 		)
 		(property "Sim.Device" "SUBCKT"
-			(at 97.79 124.46 0)
+			(at 147.32 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2411,8 +2667,8 @@
 				)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 98.044 124.46 0)
+		(property "Sim.Pins" "1=P1 2=P2"
+			(at 146.05 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2422,8 +2678,8 @@
 				)
 			)
 		)
-		(property "Created by" "Manual Entry"
-			(at 97.79 124.46 0)
+		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_resistors/RMCF0603FT10K0.lib"
+			(at 144.78 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2433,35 +2689,8 @@
 				)
 			)
 		)
-		(pin "2"
-			(uuid "2230f839-5037-4287-b8d1-e895c0666586")
-		)
-		(pin "1"
-			(uuid "3cfd6b3f-2b7d-475b-8e03-dd892c3a3560")
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "D401")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 129.54 133.35 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9f6f8aca-fdf6-4fe6-ba09-c0eed1e1a0db")
-		(property "Reference" "#PWR0405"
-			(at 129.54 139.7 0)
+		(property "Sim.Name" "RMCF0603FT10K0"
+			(at 143.51 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2471,172 +2700,8 @@
 				)
 			)
 		)
-		(property "Value" "GND"
-			(at 129.54 138.43 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 129.54 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4b845fc8-4d10-464b-ac26-82e7c2f68c0c")
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR0405")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bfr_diodes:1N5819WS")
-		(at 97.79 133.35 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a429d46b-8fe2-4470-a6a0-9c079fcc33d8")
-		(property "Reference" "D402"
-			(at 98.1075 127 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "600m"
-			(at 98.1075 129.54 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-323_HandSoldering"
-			(at 97.79 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
-			(at 97.79 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "JLC Basic 1A 600mV SOD-323 Schottky Diode"
-			(at 97.79 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C191023"
-			(at 98.044 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Digikey P/N" "5272-B5819WSCT-ND"
-			(at 97.79 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser P/N" "833-B5819WS-TP"
-			(at 98.044 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Order From" "LCSC"
-			(at 97.79 137.414 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "JLCPCB Basic Part" "Yes"
-			(at 97.79 137.16 0)
+		(property "Pretty Name" "10kΩ 0603 Resistor"
+			(at 142.24 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2647,7 +2712,7 @@
 			)
 		)
 		(property "Qty/Unit" ""
-			(at 97.79 133.35 0)
+			(at 140.97 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2658,7 +2723,7 @@
 			)
 		)
 		(property "Cost/Unit" ""
-			(at 97.79 133.35 0)
+			(at 139.7 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2668,8 +2733,8 @@
 				)
 			)
 		)
-		(property "Pretty Name" "1A SOD-323 Schottky Diode"
-			(at 97.79 137.16 0)
+		(property "Order From" "LCSC"
+			(at 138.43 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2679,8 +2744,8 @@
 				)
 			)
 		)
-		(property "Sim.Library" "${BFRUH_DIR}\\Electronics\\spice_models\\bfr_diodes\\1N5819WS.lib"
-			(at 97.79 137.16 0)
+		(property "Digikey P/N" "RMCF0603FT10K0CT-ND"
+			(at 137.16 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2690,8 +2755,8 @@
 				)
 			)
 		)
-		(property "Sim.Name" "1N5819WS"
-			(at 98.044 137.16 0)
+		(property "Mouser P/N" "708-RMCF0603FT10K0"
+			(at 137.16 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2701,8 +2766,8 @@
 				)
 			)
 		)
-		(property "Sim.Device" "SUBCKT"
-			(at 97.79 137.16 0)
+		(property "LCSC P/N" "C25804"
+			(at 137.16 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2712,8 +2777,8 @@
 				)
 			)
 		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 98.044 137.16 0)
+		(property "JLCPCB Basic Part" "Yes"
+			(at 137.16 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2723,8 +2788,8 @@
 				)
 			)
 		)
-		(property "Created by" "Manual Entry"
-			(at 97.79 137.16 0)
+		(property "Created by" "resistor_generator.py script using e24_resistor_bible_spec.txt"
+			(at 137.16 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2733,25 +2798,25 @@
 					(size 1.27 1.27)
 				)
 			)
-		)
-		(pin "2"
-			(uuid "24301558-fceb-4d6e-9935-fd2632257a34")
 		)
 		(pin "1"
-			(uuid "a8c93b88-fbb3-4223-a66e-c5dab98de836")
+			(uuid "2d82a85d-a5c5-40c9-920f-b6f5e80e8e8f")
+		)
+		(pin "2"
+			(uuid "36723fcf-589e-491e-85c6-29800739d867")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "D402")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "R104")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 146.05 133.35 0)
+		(lib_id "bfr_capacitors:KGM21AR51A475KU")
+		(at 71.12 105.41 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2759,31 +2824,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b0dd3b03-97c9-4c46-b67b-822861463d1d")
-		(property "Reference" "#PWR0406"
-			(at 146.05 139.7 0)
-			(hide yes)
+		(uuid "ef76c0ce-3347-44d0-a829-20e32f8d6dea")
+		(property "Reference" "C103"
+			(at 62.992 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "GND"
-			(at 146.05 138.43 0)
+		(property "Value" "4.7u"
+			(at 62.992 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 146.05 133.35 0)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 71.12 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2794,7 +2859,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 133.35 0)
+			(at 71.12 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2804,8 +2869,373 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 146.05 133.35 0)
+		(property "Description" "4.7uF±10% X5R 10V JLCPCB Basic 0805 Capacitor"
+			(at 71.12 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "SUBCKT"
+			(at 71.12 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=P1 2=P2"
+			(at 71.12 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_capacitors/KGM21AR51A475KU.lib"
+			(at 71.12 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "KGM21AR51A475KU"
+			(at 71.12 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pretty Name" "4.7uF 10V 0805 Capacitor"
+			(at 71.12 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Qty/Unit" ""
+			(at 71.12 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Cost/Unit" ""
+			(at 71.12 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Order From" "LCSC"
+			(at 71.12 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Digikey P/N" "478-KGM21AR51A475KUCT-ND"
+			(at 71.12 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser P/N" "581-KGM21AR51A475KU"
+			(at 71.12 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1779"
+			(at 71.12 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Basic Part" "Yes"
+			(at 71.12 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Created by" "capacitor_generator.py script using capacitor_bible_spec.txt"
+			(at 71.12 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "44017bed-713c-4a3c-b625-2b22b4f554a5")
+		)
+		(pin "1"
+			(uuid "e589d820-540d-4356-920a-8959908354e5")
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "C103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "bfr_resistors:RMCF0603FT10K0")
+		(at 90.17 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f3f47c2c-7f2d-4063-b3bc-d7a5bf0eeec7")
+		(property "Reference" "R103"
+			(at 94.488 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 94.488 113.03 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 90.17 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.seielect.com/catalog/sei-rmcf_rmcp.pdf"
+			(at 90.17 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "10kΩ 0603 JLCPCB Basic Resistor"
+			(at 90.17 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "SUBCKT"
+			(at 90.17 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=P1 2=P2"
+			(at 90.17 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Library" "${BFRUH_DIR}/Electronics/spice_models/bfr_resistors/RMCF0603FT10K0.lib"
+			(at 90.17 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Name" "RMCF0603FT10K0"
+			(at 90.17 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Pretty Name" "10kΩ 0603 Resistor"
+			(at 90.17 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Qty/Unit" ""
+			(at 90.17 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Cost/Unit" ""
+			(at 90.17 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Order From" "LCSC"
+			(at 90.17 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Digikey P/N" "RMCF0603FT10K0CT-ND"
+			(at 90.17 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser P/N" "708-RMCF0603FT10K0"
+			(at 90.17 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C25804"
+			(at 90.17 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB Basic Part" "Yes"
+			(at 90.17 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Created by" "resistor_generator.py script using e24_resistor_bible_spec.txt"
+			(at 90.17 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2816,12 +3246,93 @@
 			)
 		)
 		(pin "1"
-			(uuid "29765f20-c1e4-4af2-b131-bd6c739ff3d7")
+			(uuid "7d5e7cdd-2783-48a5-acbf-a8e3ba34d3a7")
+		)
+		(pin "2"
+			(uuid "5831ad63-57ae-4202-9870-c2ca33bd343b")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d/81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0"
-					(reference "#PWR0406")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "R103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 73.66 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe276a5c-4bec-4948-a618-7e48e01cf5cd")
+		(property "Reference" "#PWR0107"
+			(at 73.66 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 73.66 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 73.66 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3fd01b60-65ac-4f3d-a46e-142f94db0571")
+		)
+		(instances
+			(project "watt_city_car_pcb"
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843/5aa8934c-927e-432a-9b3c-3f0797ce4268"
+					(reference "#PWR0107")
 					(unit 1)
 				)
 			)

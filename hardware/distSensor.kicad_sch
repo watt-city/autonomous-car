@@ -2,10 +2,10 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "6fddea99-d25c-4ff8-8a86-6dea141d3960")
+	(uuid "02664101-bef9-4d2f-920a-15bffc08984d")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:Conn_01x01_Socket"
+		(symbol "Connector_Generic:Conn_01x06"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -16,7 +16,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "J"
-				(at 0 2.54 0)
+				(at 0 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -25,8 +25,8 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x01_Socket"
-				(at 0 -2.54 0)
+			(property "Value" "Conn_01x06"
+				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -57,21 +57,11 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x01, script generated"
+			(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -100,11 +90,21 @@
 					)
 				)
 			)
-			(symbol "Conn_01x01_Socket_1_1"
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
+			(symbol "Conn_01x06_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 1.27 -8.89)
+					(stroke
+						(width 0.254)
+						(type default)
 					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -113,10 +113,53 @@
 						(type none)
 					)
 				)
-				(arc
-					(start 0 -0.508)
-					(mid -0.5058 0)
-					(end 0 0.508)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -126,7 +169,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -5.08 5.08 0)
 					(length 3.81)
 					(name "Pin_1"
 						(effects
@@ -143,10 +186,100 @@
 						)
 					)
 				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+5V"
+		(symbol "power:+3.3V"
 			(power global)
 			(pin_numbers
 				(hide yes)
@@ -171,7 +304,7 @@
 					)
 				)
 			)
-			(property "Value" "+5V"
+			(property "Value" "+3.3V"
 				(at 0 3.556 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -203,7 +336,7 @@
 					)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -225,7 +358,7 @@
 					)
 				)
 			)
-			(symbol "+5V_0_1"
+			(symbol "+3.3V_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -263,7 +396,7 @@
 					)
 				)
 			)
-			(symbol "+5V_1_1"
+			(symbol "+3.3V_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
@@ -401,126 +534,210 @@
 			(embedded_fonts no)
 		)
 	)
-	(junction
-		(at 176.53 128.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "06e26245-362c-4901-9fc0-a5ca2b831ece")
+	(text "interrupt is input_pullup\nxshut is output"
+		(exclude_from_sim no)
+		(at 123.698 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0aff75d9-ff7c-4950-98e0-5dd6d9b246b2")
+	)
+	(bus_entry
+		(at 139.7 124.46)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ec08047-1f79-47f5-b4b2-39cc5e69acf3")
+	)
+	(bus_entry
+		(at 139.7 119.38)
+		(size -2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7c4cb3c-3025-4510-b1fb-519676fdb251")
 	)
 	(wire
 		(pts
-			(xy 121.92 91.44) (xy 129.54 91.44)
+			(xy 139.7 120.65) (xy 166.37 120.65)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "062355e8-bf1a-4146-9204-c0b8fd3115ed")
+		(uuid "0a606345-c442-4c76-9e26-798744421ec3")
 	)
 	(bus
 		(pts
-			(xy 104.14 138.43) (xy 130.81 138.43)
+			(xy 137.16 121.92) (xy 91.44 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "34e2885c-170e-4509-8a8b-e98e64ae8361")
+		(uuid "192e2732-5796-45c7-87bd-70ba3283c283")
 	)
 	(wire
 		(pts
-			(xy 104.14 128.27) (xy 143.51 128.27)
+			(xy 160.02 114.3) (xy 160.02 118.11)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "36606388-4c9f-4a52-bf60-e0b3ec3a7f7d")
+		(uuid "4730be10-c7b9-4240-94c0-fd83bc9d6d28")
 	)
 	(wire
 		(pts
-			(xy 172.72 128.27) (xy 176.53 128.27)
+			(xy 162.56 128.27) (xy 166.37 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "506ee22b-4dce-4ab3-892c-c1f3073ee5ea")
+		(uuid "52a65aac-339f-49a4-aee0-d4ab622a077c")
 	)
 	(wire
 		(pts
-			(xy 123.19 104.14) (xy 129.54 104.14)
+			(xy 160.02 118.11) (xy 166.37 118.11)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cdbb6506-7e49-4cee-ad4b-d3157bdef344")
+		(uuid "62e8a814-a3d1-43d3-9be0-8c4cb22cfb0c")
 	)
 	(wire
 		(pts
-			(xy 190.5 124.46) (xy 198.12 124.46)
+			(xy 139.7 123.19) (xy 166.37 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e50dd498-b919-4439-80c8-6550a60afc4f")
+		(uuid "7346c126-6a31-4b59-803a-23c5c8a2b7ed")
 	)
 	(wire
 		(pts
-			(xy 176.53 128.27) (xy 198.12 128.27)
+			(xy 139.7 120.65) (xy 139.7 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fcceeead-00c1-452a-9f3c-e80c5af54127")
+		(uuid "87657484-e71e-4d1d-89ac-b5cd0b0494d8")
 	)
-	(label "VBATT"
-		(at 190.5 124.46 0)
+	(wire
+		(pts
+			(xy 139.7 124.46) (xy 139.7 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac022aec-e559-4960-a2ba-d4e09bb23b3a")
+	)
+	(wire
+		(pts
+			(xy 154.94 114.3) (xy 160.02 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b67a79c8-ec0f-4a53-a3a0-8aaf49e2f6fc")
+	)
+	(wire
+		(pts
+			(xy 162.56 115.57) (xy 166.37 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e748c6c3-5d20-4a97-99de-edce50fb8a58")
+	)
+	(wire
+		(pts
+			(xy 162.56 125.73) (xy 166.37 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7b899ce-c50f-42c7-97bd-fcd76b8aa5ab")
+	)
+	(label "LASER_I2C.LASER_I2C_SDA"
+		(at 140.97 123.19 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "7425b23e-9375-4abd-ade5-99fa2d0ed9a9")
+		(uuid "278099f9-6798-4e53-97cb-1a22b6729bc4")
 	)
-	(label "{USB_D+, USB_D-}"
-		(at 106.68 138.43 0)
+	(label "LASER_I2C{LASER_I2C_SCL, LASER_I2C_SDA}"
+		(at 135.89 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "316a54a5-a3b7-4489-a902-677efd8d4738")
+	)
+	(label "LASER_I2C.LASER_I2C_SCL"
+		(at 140.97 120.65 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "da16d51e-5f1c-4b9b-a0ea-008454373f37")
+		(uuid "903e0e63-0f0e-491d-808d-ef12b3eb8c0e")
 	)
-	(label "VBATT"
-		(at 121.92 91.44 0)
+	(hierarchical_label "laser0_interrupt"
+		(shape output)
+		(at 162.56 128.27 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right)
 		)
-		(uuid "f214d011-06a2-4ce3-a815-a2f635868847")
+		(uuid "318ae079-d371-48c3-a6ff-fa8753e10716")
 	)
-	(hierarchical_label "USB"
+	(hierarchical_label "laser0_xshut"
+		(shape input)
+		(at 162.56 125.73 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b662bd61-9727-4ba8-be6f-d7efc4d2fd33")
+	)
+	(hierarchical_label "LASER_I2C"
 		(shape bidirectional)
-		(at 130.81 138.43 0)
+		(at 91.44 121.92 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "d7e0e4cb-6462-43d4-8efd-9eb9080e90d3")
+		(uuid "bf7acc17-27ba-41aa-9638-c40b1aeed448")
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x01_Socket")
-		(at 134.62 104.14 0)
+		(lib_id "power:+3.3V")
+		(at 162.56 115.57 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -529,31 +746,30 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "06efe500-df52-4e16-841f-495414f1865c")
-		(property "Reference" "J302"
-			(at 135.89 102.8699 0)
+		(uuid "00cea9b9-e355-484c-b24f-554cef0597da")
+		(property "Reference" "#PWR0103"
+			(at 162.56 119.38 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x01_Socket"
-			(at 135.89 105.4099 0)
+		(property "Value" "+3.3V"
+			(at 162.56 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 134.62 104.14 0)
+			(at 162.56 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -564,7 +780,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 134.62 104.14 0)
+			(at 162.56 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -574,8 +790,8 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 134.62 104.14 0)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 162.56 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -586,20 +802,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "eafb4e53-75e7-42ab-9ba3-29848a3e6ce8")
+			(uuid "4120dcfa-4eb9-4c6d-bf1f-83fc18f303d2")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "J302")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843"
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x01_Socket")
-		(at 134.62 91.44 0)
+		(lib_id "Connector_Generic:Conn_01x06")
+		(at 171.45 120.65 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -608,9 +824,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "1de68ba0-42c9-4740-924b-115b4c688baf")
-		(property "Reference" "J301"
-			(at 135.89 90.1699 0)
+		(uuid "28baa5db-ae57-4d67-8940-aa9a6a658010")
+		(property "Reference" "J4"
+			(at 173.99 120.6499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -620,8 +836,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Conn_01x01_Socket"
-			(at 135.89 92.7099 0)
+		(property "Value" "J_VL53L0X"
+			(at 173.99 123.1899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -631,8 +847,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 134.62 91.44 0)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Horizontal"
+			(at 171.45 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -643,7 +859,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 134.62 91.44 0)
+			(at 171.45 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -653,8 +869,8 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 134.62 91.44 0)
+		(property "Description" "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 171.45 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -665,12 +881,27 @@
 			)
 		)
 		(pin "1"
-			(uuid "b5c788a5-5803-4511-8ac2-7c17b4431165")
+			(uuid "d40bccbb-71b5-4d0d-b47e-e090c0eefa14")
+		)
+		(pin "5"
+			(uuid "46db20a6-c6f3-4972-be17-a92382bc5b68")
+		)
+		(pin "6"
+			(uuid "fdb2b725-a099-4cb2-a92f-9a15f7675a5d")
+		)
+		(pin "3"
+			(uuid "e0b156ec-1ebb-470e-b582-2f83ce7189f7")
+		)
+		(pin "4"
+			(uuid "196bb184-e8c4-4a3c-8be1-779c576dd61e")
+		)
+		(pin "2"
+			(uuid "3e6cb263-3826-4339-87a9-a368d1526a60")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "J301")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843"
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -678,7 +909,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 123.19 104.14 0)
+		(at 154.94 114.3 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -686,10 +917,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6c400093-5124-47af-ad14-6b5ba0d873e2")
-		(property "Reference" "#PWR0301"
-			(at 123.19 110.49 0)
+		(uuid "eef612ac-b245-4f1b-893b-cffa23781849")
+		(property "Reference" "#PWR0106"
+			(at 154.94 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -700,7 +930,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 123.19 109.22 0)
+			(at 150.622 114.808 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -710,7 +940,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 123.19 104.14 0)
+			(at 154.94 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -721,7 +951,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 104.14 0)
+			(at 154.94 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -732,7 +962,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 123.19 104.14 0)
+			(at 154.94 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -743,300 +973,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "e7ae2cb0-9cc0-4176-8710-20a6433d1dbe")
+			(uuid "ab545537-d47e-47c7-a32f-baa2d0cbbc16")
 		)
 		(instances
 			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "#PWR0301")
+				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/56c09725-4c0b-4c27-ad0f-0fa15d53c843"
+					(reference "#PWR0106")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 176.53 128.27 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ef4d4ad7-3e1f-4ccd-bc79-58f6bb074fdd")
-		(property "Reference" "#PWR06"
-			(at 176.53 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 176.53 123.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 176.53 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 176.53 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 176.53 128.27 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b4e2b96a-4612-4fb4-9c45-1e55120e842d")
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(reference "#PWR06")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(sheet
-		(at 143.51 121.92)
-		(size 29.21 15.24)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "11e678e9-11ad-4329-aadb-e9f493068a12")
-		(property "Sheetname" "powerProtection"
-			(at 143.51 121.2084 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "powerProtection.kicad_sch"
-			(at 143.51 137.7446 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "+5V_prot" input
-			(at 172.72 128.27 0)
-			(uuid "f9a45f45-4e7b-489f-b4c2-9aa5f48cecaf")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "+5V_USB" input
-			(at 143.51 128.27 180)
-			(uuid "9cb63258-c420-4e48-a2d2-80c47c7f5cea")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(page "9")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 198.12 119.38)
-		(size 34.29 19.05)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "81bfdcbb-0765-4e46-a0e2-0ba7ca7f41f0")
-		(property "Sheetname" "ldo"
-			(at 198.12 118.6684 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "ldo.kicad_sch"
-			(at 198.12 139.0146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Field2" ""
-			(at 198.12 119.38 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "VBATT" input
-			(at 198.12 124.46 180)
-			(uuid "d325ab1e-7756-4af5-aa12-309dab58dff9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "+5V_prot" input
-			(at 198.12 128.27 180)
-			(uuid "e361fa7a-270a-4a8f-90d6-ac7a35a79f6a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(page "4")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 59.69 119.38)
-		(size 44.45 26.67)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "b5be7689-98d6-47fe-8b13-538f7b8d313e")
-		(property "Sheetname" "usb"
-			(at 59.69 118.6684 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "usb.kicad_sch"
-			(at 59.69 146.6346 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "+5V_USB" output
-			(at 104.14 128.27 0)
-			(uuid "3468b0e6-e626-47d8-b988-d0093fd8eab5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "USB" bidirectional
-			(at 104.14 138.43 0)
-			(uuid "c7118d1a-110c-4799-8d15-00607fd5779d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "watt_city_car_pcb"
-				(path "/72ee6c6c-9225-4cd9-b8d3-156d5f3d5230/59e3dad0-55dc-4a04-87f2-2c349902244d"
-					(page "5")
 				)
 			)
 		)
