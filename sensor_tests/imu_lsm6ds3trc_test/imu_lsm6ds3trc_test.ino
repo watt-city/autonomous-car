@@ -17,13 +17,13 @@ void setup() {
 
   // Pass 0x6A address and pointer to our initialized Wire instance
   if (!lsm6ds.begin_I2C(0x6A, &Wire)) {
-    Serial.println("❌ Failed to find LSM6DS3TRC at 0x6A!");
+    Serial.println("Failed to find LSM6DS3TRC at 0x6A");
     while (1) {
       delay(10);
     }
   }
 
-  Serial.println("✅ LSM6DS3TRC Found and Ready!");
+  Serial.println("LSM6DS3TRC Found and Ready!");
 }
 
 void loop() {

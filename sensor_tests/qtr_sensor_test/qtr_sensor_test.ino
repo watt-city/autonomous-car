@@ -25,8 +25,6 @@ void setup() {
     qtr.calibrationOn.minimum[i] = savedMin[i];
     qtr.calibrationOn.maximum[i] = savedMax[i];
   }
-
-  Serial.println("✅ Saved Calibration Loaded! Printing individual IR pair values.");
 }
 
 void loop() {

@@ -16,15 +16,13 @@ void setup() {
   Wire.begin(I2C_SDA, I2C_SCL);
 
   if (!lox.begin(0x29, false, &Wire)) {
-    Serial.println("❌ Failed to boot VL53L0X!");
+    Serial.println("Failed to boot VL53L0X");
     while (1) delay(10);
   }
 
-  // 🎯 Optional: Increase measurement timing budget for higher accuracy (+/- 3%)
-  // Default is 33ms. Setting to 200ms gives much higher accuracy/calibration precision!
   lox.setMeasurementTimingBudgetMicroSeconds(200000); 
 
-  Serial.println("✅ VL53L0X Calibrated & Ready!");
+  Serial.println("VL53L0X Calibrated & Ready!");
 }
 
 void loop() {

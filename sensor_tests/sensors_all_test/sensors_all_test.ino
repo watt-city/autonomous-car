@@ -93,16 +93,16 @@ void setup() {
 
   // 4. Init Sensors
   if (!lsm.begin_I2C(0x6A, &Wire)) {
-    btPrint("❌ IMU Not Found!\n");
+    btPrint("IMU Not Found!\n");
   } else {
-    btPrint("✅ IMU Ready!\n");
+    btPrint("IMU Ready\n");
   }
 
   if (!lox.begin(0x29, false, &Wire)) {
-    btPrint("❌ VL53L0X Not Found!\n");
+    btPrint("VL53L0X Not Found!\n");
   } else {
     lox.startRangeContinuous(50);
-    btPrint("✅ VL53L0X Ready!\n");
+    btPrint("VL53L0X Ready!\n");
   }
 
   // 5. Init QTR
@@ -118,7 +118,7 @@ void setup() {
     qtr.calibrationOn.minimum[i] = savedMin[i];
     qtr.calibrationOn.maximum[i] = savedMax[i];
   }
-  btPrint("✅ QTR Calibration Loaded!\n\n");
+  btPrint("QTR Calibration Loaded!\n\n");
 }
 
 void loop() {
@@ -161,7 +161,7 @@ void loop() {
     telemetry += "Waiting...\n";
     
     if (millis() - lastValidToFTime > 500) {
-      btPrint("⚠️ ToF Froze! Auto-rebooting...\n");
+      btPrint("ToF Froze! Rebooting\n");
       resetVL53L0X();
       lox.begin(0x29, false, &Wire);
       lox.startRangeContinuous(50);
