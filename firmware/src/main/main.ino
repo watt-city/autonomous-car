@@ -1,101 +1,126 @@
-#include <Wire.h>
-#include <QTRSensors.h>
+#include <Arduino.h>
 
-// Motor Controller TB6612FNG Pins ---
-#define STBY        17
-#define PWMA        13
-#define AIN1        14
-#define AIN2        21
-#define PWMB        15
-#define BIN1        16
-#define BIN2        18
+// --- Motor Pins (Left = Motor A, Right = Motor B) ---
+#define LEFT_PWMA   15
+#define LEFT_AIN1   16
+#define LEFT_AIN2   17
 
-// QTR Sensor Setup ---
-#define QTR_CTRL    11
-const uint8_t SensorCount = 8;
-uint8_t qtrPins[SensorCount] = {1, 2, 3, 4, 5, 6, 7, 10};
+#define RIGHT_PWMB  18
+#define RIGHT_BIN1  39  // Changed from 19 to avoid USB D- conflict
+#define RIGHT_BIN2  40  // Changed from 20 to avoid USB D+ conflict
 
-QTRSensors qtr;
+// --- Encoder Pins ---
+#define LEFT_ENC_A  13
+#define LEFT_ENC_B  14
 
-// --- PID Tuning Parameters ---
-float Kp = 0.04;
-float Ki = 0.0000;
-float Kd = 0.35;
+#define RIGHT_ENC_A 21
+#define RIGHT_ENC_B 38
 
-int baseSpeed = 160;  // Cruising PWM speed (0 - 255)
-int maxSpeed  = 220;  // Max PWM speed ceiling
+// --- Quadrature Tick Counters ---
+volatile long leftTicks = 0;
+volatile long rightTicks = 0;
 
-int lastError = 0;
-float integral = 0;
-
-void setup() {
-  Serial.begin(115200);
-
-  // 1. Motor Driver Pins
-  pinMode(STBY, OUTPUT);
-  pinMode(PWMA, OUTPUT);
-  pinMode(AIN1, OUTPUT);
-  pinMode(AIN2, OUTPUT);
-  pinMode(PWMB, OUTPUT);
-  pinMode(BIN1, OUTPUT);
-  pinMode(BIN2, OUTPUT);
-
-  // Enable Motor Driver
-  digitalWrite(STBY, HIGH);
-
-  // 2. QTR Sensor Array Setup
-  qtr.setTypeRC();
-  qtr.setSensorPins(qtrPins, SensorCount);
-  qtr.setEmitterPin(QTR_CTRL);
-
-  // Load Saved Calibration Data
-  qtr.calibrate();
-  uint16_t savedMin[8] = {199, 180, 190, 214, 234, 263, 272, 290};
-  uint16_t savedMax[8] = {1453, 1259, 1216, 1187, 1138, 1128, 1079, 1259};
-  
-  for (uint8_t i = 0; i < SensorCount; i++) {
-    qtr.calibrationOn.minimum[i] = savedMin[i];
-    qtr.calibrationOn.maximum[i] = savedMax[i];
+// ISR for Left Encoder
+void IRAM_ATTR handleLeftEncoder() {
+  if (digitalRead(LEFT_ENC_B) == HIGH) {
+    leftTicks++;
+  } else {
+    leftTicks--;
   }
 }
 
-void loop() {
-  // 1. Get exact position over line (0 = far left, 3500 = center, 7000 = far right)
-  uint16_t sensorValues[SensorCount];
-  uint16_t position = qtr.readLineBlack(sensorValues);
-
-  // 2. Compute position error relative to center
-  int error = (int)position - 3500;
-
-  // 3. Compute PID loop terms
-  float pTerm = Kp * error;
-  integral += error;
-  float iTerm = Ki * integral;
-  float dTerm = Kd * (error - lastError);
-
-  float motorAdjustment = pTerm + iTerm + dTerm;
-  lastError = error;
-
-  // 4. Calculate Left and Right motor speeds
-  int leftMotorSpeed  = baseSpeed + motorAdjustment;
-  int rightMotorSpeed = baseSpeed - motorAdjustment;
-
-  // Clamp values within motor operating range (0 to maxSpeed)
-  leftMotorSpeed  = constrain(leftMotorSpeed, 0, maxSpeed);
-  rightMotorSpeed = constrain(rightMotorSpeed, 0, maxSpeed);
-
-  // 5. Output signals to TB6612 motor driver
-  driveMotors(leftMotorSpeed, rightMotorSpeed);
+// ISR for Right Encoder (Inverted logic to match physical mounting)
+void IRAM_ATTR handleRightEncoder() {
+  if (digitalRead(RIGHT_ENC_B) == HIGH) {
+    rightTicks--;  // Flipped ++ to --
+  } else {
+    rightTicks++;  // Flipped -- to ++
+  }
 }
 
-void driveMotors(int leftSpeed, int rightSpeed) {
-  // Left Motor Forward
-  digitalWrite(AIN1, HIGH);
-  digitalWrite(AIN2, LOW);
-  analogWrite(PWMA, leftSpeed);
+void setup() {
+  Serial.begin(115200);
+  delay(1000); // Give USB serial connection time to establish
 
-  // Right Motor Forward
-  digitalWrite(BIN1, HIGH);
-  digitalWrite(BIN2, LOW);
-  analogWrite(PWMB, rightSpeed);
+  // 1. Setup Motor Output Pins
+  pinMode(LEFT_PWMA, OUTPUT);
+  pinMode(LEFT_AIN1, OUTPUT);
+  pinMode(LEFT_AIN2, OUTPUT);
+
+  pinMode(RIGHT_PWMB, OUTPUT);
+  pinMode(RIGHT_BIN1, OUTPUT);
+  pinMode(RIGHT_BIN2, OUTPUT);
+
+  // 2. Setup Encoder Inputs
+  pinMode(LEFT_ENC_A, INPUT_PULLUP);
+  pinMode(LEFT_ENC_B, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(LEFT_ENC_A), handleLeftEncoder, RISING);
+
+  pinMode(RIGHT_ENC_A, INPUT_PULLUP);
+  pinMode(RIGHT_ENC_B, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(RIGHT_ENC_A), handleRightEncoder, RISING);
+
+  Serial.println("\n--- Dual Motor & Encoder USB-Safe Test ---");
+}
+
+void loop() {
+  // --- Drive Both Forward ---
+  Serial.println(">>> Driving BOTH FORWARD...");
+  setMotors(180, 180);
+  printTicksForDuration(2000);
+
+  stopMotors();
+  delay(1000);
+
+  // --- Drive Both Reverse ---
+  Serial.println(">>> Driving BOTH REVERSE...");
+  setMotors(-180, -180);
+  printTicksForDuration(2000);
+
+  stopMotors();
+  delay(2000);
+}
+
+void setMotors(int leftSpeed, int rightSpeed) {
+  // Left Motor
+  if (leftSpeed >= 0) {
+    digitalWrite(LEFT_AIN1, HIGH);
+    digitalWrite(LEFT_AIN2, LOW);
+  } else {
+    digitalWrite(LEFT_AIN1, LOW);
+    digitalWrite(LEFT_AIN2, HIGH);
+    leftSpeed = -leftSpeed;
+  }
+  analogWrite(LEFT_PWMA, constrain(leftSpeed, 0, 255));
+
+  // Right Motor
+  if (rightSpeed >= 0) {
+    digitalWrite(RIGHT_BIN1, HIGH);
+    digitalWrite(RIGHT_BIN2, LOW);
+  } else {
+    digitalWrite(RIGHT_BIN1, LOW);
+    digitalWrite(RIGHT_BIN2, HIGH);
+    rightSpeed = -rightSpeed;
+  }
+  analogWrite(RIGHT_PWMB, constrain(rightSpeed, 0, 255));
+}
+
+void stopMotors() {
+  analogWrite(LEFT_PWMA, 0);
+  analogWrite(RIGHT_PWMB, 0);
+  digitalWrite(LEFT_AIN1, LOW);
+  digitalWrite(LEFT_AIN2, LOW);
+  digitalWrite(RIGHT_BIN1, LOW);
+  digitalWrite(RIGHT_BIN2, LOW);
+}
+
+void printTicksForDuration(unsigned long durationMs) {
+  unsigned long start = millis();
+  while (millis() - start < durationMs) {
+    Serial.print("LEFT Ticks: ");
+    Serial.print(leftTicks);
+    Serial.print(" \t| RIGHT Ticks: ");
+    Serial.println(rightTicks);
+    delay(100);
+  }
 }
