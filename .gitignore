@@ -1,0 +1,24 @@
+# ---- KiCad: autosaves, backups, locks, per-user settings ----
+*-backups/
+_autosave-*
+*.lck
+~*
+fp-info-cache
+*.kicad_prl
+.history/
+# Generated fab outputs: attach to a GitHub Release instead of committing
+*-gerbers/
+gerbers/
+
+# ---- Arduino / PlatformIO build output ----
+build/
+.pio/
+.vscode/
+
+# ---- Secrets: never commit WiFi passwords or keys (repo is public) ----
+secrets.h
+
+# ---- OS clutter ----
+.DS_Store
+Thumbs.db
+desktop.ini
