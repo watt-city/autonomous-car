@@ -1,0 +1,25 @@
+# ---- Secrets: never commit WiFi passwords or keys (repo is public) ----
+secrets.h
+
+# ---- KiCad temporary, lock, and backup files ----
+*-backups/
+*.lck
+~*.lck
+*.kicad_prl
+fp-info-cache
+
+# ---- Editor & IDE clutter ----
+.history/
+.vscode/
+.pio/
+build/
+
+# ---- Python ----
+__pycache__/
+.venv/
+venv/
+
+# ---- OS clutter ----
+.DS_Store
+Thumbs.db
+desktop.ini
