@@ -1,8 +1,8 @@
 # WATT City: Autonomous Car
 
-Custom PCB hardware, PID line-following firmware, and breakout bring-up tests for the WATT City autonomous car.
+Firmware, sensor tests, and PCB design for the WATT City self-driving car: an ESP32-S3 robot that follows a black line, slows or stops for obstacles, reads AprilTags at intersections, and obeys traffic-light messages from the stoplight over ESP-NOW.
 
-> **Current Hardware Status:** All Arduino sketches currently in `firmware/` and `sensor_tests/` are configured for our **ESP32-S3 DevKit + breakout board prototype** (LSM6DS3TR-C I2C breakout, VL53L0X breakout, Pololu QTR-8RC, TB6612FNG breakout). The final custom PCB in `hardware/` uses a bare **ESP32-S3-WROOM-1-N8** module with an onboard **LSM6DSM** IMU over SPI; pin definitions and IMU initialization will be updated when bringing up the custom PCB.
+> **Current hardware status:** every sketch in `firmware/` and `sensor_tests/` targets the **ESP32-S3 DevKit + breakout prototype** (LSM6DS3TR-C I2C breakout, VL53L0X breakout, Pololu QTR-MD-08RC, TB6612FNG breakout). The custom PCB in `hardware/` uses a bare **ESP32-S3-WROOM-1-N8** with an onboard **LSM6DSM** IMU over SPI; pins and IMU setup change when the PCB is brought up (see the end of this file).
 
 **Owned by:** Car team · **Leads:** Alisa Zhang, Katie Tao · **Questions:** `#watt-city` on WATT Slack
 
@@ -13,85 +13,105 @@ Part of [WATT City](https://github.com/watt-city), IEEE WATT's year-long project
 ## Repo layout
 
 ```
-hardware/                              ← KiCad 10.0 project for the custom Car PCB (ESP32-S3-WROOM-1-N8)
-  watt_city_car_pcb.kicad_pro          ← Main KiCad project file
-  watt_city_car_pcb.kicad_sch          ← Top-level hierarchical schematic
-  watt_city_car_pcb.kicad_pcb          ← PCB layout (in progress)
-  microcontroller.kicad_sch            ← ESP32-S3-WROOM-1-N8 + Boot/Reset buttons
-  power.kicad_sch                      ← Power architecture (LDO, USB-C, protection)
-    ldo.kicad_sch                      ← AP2112K-3.3 regulator
-    powerProtection.kicad_sch          ← Reverse-polarity / diode protection
-    usb.kicad_sch                      ← USB-C connector + ESD protection
-  motorController.kicad_sch            ← Onboard TB6612FNG driver + left/right motor connectors
-  distSensor.kicad_sch                 ← VL53L0X ToF distance sensor header
-  irArray.kicad_sch                    ← QTR-8RC 8-channel IR line sensor header
-  imu.kicad_sch                        ← Onboard LSM6DSM IMU (SPI) schematic sheet
-firmware/                              ← Integrated car firmware (currently targeting DevKit prototype)
-  src/main/main.ino                    ← CURRENT: PID line-following, ToF obstacle stop, encoders & BLE telemetry
-sensor_tests/                          ← Standalone DevKit + breakout board bring-up & calibration sketches
-  i2c_scanner/                         ← Pings I2C bus (SDA=8, SCL=9) to verify breakout addresses
-  imu_lsm6ds3trc_test/                 ← Reads 3-axis accel + 3-axis gyro from LSM6DS3TR-C breakout (0x6A)
-  qtr_sensor_calibration/              ← 5-second sweep calibration; prints savedMin/savedMax arrays
-  qtr_sensor_test/                     ← Live calibrated QTR-8RC readout (0 = white, 1000 = black)
-  vl53l0x_test/                        ← VL53L0X breakout distance readout (0x29) with -17 mm offset
-  sensors_all_test/                    ← Combined QTR + IMU + ToF breakout test streaming over BLE UART
+firmware/
+  src/main/main.ino  ← PID line follower + ToF obstacle stop + encoder & BLE telemetry (single loop, PWM out)
+  pid_line/          ← Cascaded PID line follower: line PD → per-wheel speed PI on the encoders, live serial tuning
+  bringup/           ← Staged hardware check: I2C, QTR, each motor, encoders. Run this first on a new build
+  main_board/        ← Integration draft: line follow + ToF + IMU + camera UART + ESP-NOW (PLACEHOLDER PINS)
+    watt_link.h      ← Shared message formats (camera → car UART, stoplight → car ESP-NOW)
+sensor_tests/        ← One small sketch per sensor, for isolating problems
+  i2c_scanner/            ← Pings I2C (SDA=8, SCL=9) to confirm the IMU (0x6A) and VL53L0X (0x29)
+  imu_lsm6ds3trc_test/    ← 3-axis accel + gyro from the LSM6DS3TR-C breakout
+  qtr_sensor_calibration/ ← 5 s sweep calibration; prints savedMin/savedMax arrays
+  qtr_sensor_test/        ← Live calibrated QTR readout (0 = white, 1000 = black)
+  vl53l0x_test/           ← VL53L0X distance readout with −17 mm offset
+  sensors_all_test/       ← QTR + IMU + ToF together, streamed over BLE UART
+  motor_encoder_test/     ← Motors + quadrature encoders
+hardware/            ← KiCad 10 project for the car PCB (hierarchical schematic + layout)
+docs/
+  test_track_letter_tiled.pdf      ← Printable line-follow track, letter pages
+  apriltags_36h11_ids0-5_50mm.pdf  ← Printable AprilTags, IDs 0–5 (37 mm black square)
 ```
+
+**Two line-follower sketches exist on purpose for now.** `src/main/main.ino` has the ToF stop and BLE telemetry; `pid_line` has the fixed-rate cascaded controller. The team will pick one to build on and port the other's features in. Until then, say which one you tested in the hardware log.
 
 ## Setup
 
 **Arduino IDE**
-1. Install the **esp32 by Espressif** board package.
-2. Install the required libraries via *Tools → Manage Libraries*:
-   - **QTRSensors** by Pololu
-   - **Adafruit LSM6DS** by Adafruit (plus Adafruit Unified Sensor & BusIO dependencies)
-   - **Adafruit VL53L0X** by Adafruit
-3. Board settings (for both the DevKit and the bare `ESP32-S3-WROOM-1-N8` on the custom PCB):
-   - Board: **ESP32S3 Dev Module**
-   - **USB CDC On Boot: Enabled** (required on the custom PCB to print over native USB `GPIO 19`/`20`)
-   - Flash Size: **8MB (64Mb)**
+1. Install the **esp32 by Espressif** board package, **v3.x** (the code uses the v3 `ledcAttach` API).
+2. Libraries (*Tools → Manage Libraries*): **QTRSensors** (Pololu), **Adafruit LSM6DS** (+ Unified Sensor & BusIO), **Adafruit VL53L0X**.
+3. Board settings: **ESP32S3 Dev Module**, **USB CDC On Boot: Enabled**, Flash Size **8MB (64Mb)**.
+4. **Put the car on a stand (wheels off the table)** before any motor test.
 
 **KiCad**
 - Open `hardware/watt_city_car_pcb.kicad_pro` in **KiCad 10.0+**.
-- **Only one person edits the KiCad project at a time** (KiCad files cannot merge). Send a message in `#watt-city` on Slack before opening KiCad, and push as soon as you finish.
+- **Only one person edits the KiCad project at a time** (KiCad files can't merge). Claim it in `#watt-city` before opening KiCad, and push as soon as you finish.
 
-## DevKit Prototype Pinout (Current Sketches)
-
-The table below reflects the wiring used in `firmware/src/main/main.ino` and `sensor_tests/` on the **ESP32-S3 DevKit + breakout prototype**:
+## DevKit prototype pinout
 
 | Subsystem | Signal | DevKit GPIO | Notes |
 |---|---|---|---|
-| **I2C Bus** | `I2C_SDA` / `I2C_SCL` | `GPIO 8` / `GPIO 9` | Shared by LSM6DS3TR-C breakout (`0x6A`) and VL53L0X (`0x29`) |
-| **VL53L0X ToF** | `VL53_XSHUT` | `GPIO 12` | Active-low hardware reset / shutdown |
-| **QTR-8RC Array** | `QTR_CTRL` (Emitter) | `GPIO 11` | IR LED emitter control |
-| | Sensors `1..8` | `GPIO 1, 2, 3, 4, 5, 6, 7, 10` | RC reflectance inputs |
-| **Left Motor (A)** | `LEFT_PWMA`, `AIN1`, `AIN2` | `GPIO 15`, `GPIO 16`, `GPIO 17` | TB6612FNG Channel A |
-| | `LEFT_ENC_A`, `LEFT_ENC_B` | `GPIO 13`, `GPIO 14` | Left quadrature encoder |
-| **Right Motor (B)** | `RIGHT_PWMB`, `BIN1`, `BIN2` | `GPIO 18`, `GPIO 39`, `GPIO 40` | TB6612FNG Channel B |
-| | `RIGHT_ENC_A`, `RIGHT_ENC_B` | `GPIO 21`, `GPIO 38` | Right quadrature encoder (inverted in ISR) |
+| **I2C bus** | `SDA` / `SCL` | `8` / `9` | LSM6DS3TR-C (`0x6A`) and VL53L0X (`0x29`). `bringup.ino` notes the log book once had these swapped: if the I2C scan finds nothing, swap them |
+| **VL53L0X** | `XSHUT` | `12` | Must be HIGH or the sensor stays off |
+| **QTR array** | `CTRL` (emitters) | `11` | |
+| | Sensors 1–8 | `1, 2, 3, 4, 5, 6, 7, 10` | |
+| **Left motor (A)** | `PWMA`, `AIN1`, `AIN2` | `15`, `16`, `17` | TB6612FNG channel A |
+| | Encoder A / B | `13` / `14` | |
+| **Right motor (B)** | `PWMB`, `BIN1`, `BIN2` | `18`, `39`, `40` | Not 19/20: those are USB D−/D+ |
+| | Encoder | `21`, `38` | `main.ino` uses A=21, B=38 and inverts in the ISR; `pid_line`/`bringup` use A=38, B=21. Both make forward count positive |
+
+> ⚠️ `main_board/main_board.ino` still uses **placeholder pins** that don't match this table. Update it before flashing.
 
 ## Using the sketches
 
-### `firmware/src/main`: PID autonomous line follower (DevKit prototype)
-- Runs the closed-loop PID controller (`Kp = 0.045`, `Ki = 0.0`, `Kd = 0.380`, `baseSpeed = 160`) tracking a black line via `qtr.readLineBlack()` (`0` to `7000`, center at `3500`).
-- **Safety gate:** Halts both motors immediately if the VL53L0X detects an obstacle closer than `MIN_OBSTACLE_DIST_MM` (`80 mm`).
-- **BLE Telemetry:** Advertises as `ESP32S3_LineFollower` using the Nordic UART Service and streams CSV lines (`Pos,Dist,GyroZ,LTicks,RTicks`) at 20 Hz.
+### `firmware/bringup`: check the hardware first
+Serial Monitor at **115200**: `i` I2C scan · `q` QTR raw · `c` QTR calibrate · `l`/`r` left/right motor · `e` encoders · `z` zero · `s` stop
 
-### `sensor_tests/` breakout workflow
-1. **`i2c_scanner`**: Run first when wiring breakouts to confirm the IMU (`0x6A`) and VL53L0X (`0x29`) respond on `GPIO 8` / `GPIO 9`.
-2. **`qtr_sensor_calibration`**: Sweep all 8 IR sensors across the black tape and white surface for 5 seconds. Copy the printed `savedMin` and `savedMax` arrays into `qtr_sensor_test` and `firmware/src/main/main.ino`.
-3. **`vl53l0x_test` & `imu_lsm6ds3trc_test`**: Verify individual distance and gyro/accelerometer breakout readings over USB Serial (`115200` baud).
-4. **`sensors_all_test`**: Full breakout suite burn-in over BLE (`ESP32S3_Car`) with automatic VL53L0X watchdog reset if the I2C bus hangs.
+### `firmware/src/main`: PID line follower with obstacle stop
+- Single-loop PID (`Kp = 0.045`, `Ki = 0`, `Kd = 0.380`, `baseSpeed = 160` PWM, max 220) on `qtr.readLineBlack()` (0–7000, center 3500).
+- **Safety gate:** stops both motors if the VL53L0X sees something closer than `MIN_OBSTACLE_DIST_MM` (80 mm).
+- **BLE telemetry:** advertises as `ESP32S3_LineFollower` (Nordic UART Service), CSV `Pos,Dist,GyroZ,LTicks,RTicks` at 20 Hz.
+- Calibration values are hard-coded in `setup()`: re-run `sensor_tests/qtr_sensor_calibration` and paste new `savedMin`/`savedMax` if the track or lighting changes.
 
-## Transitioning from DevKit Breakouts → Custom PCB
+### `firmware/pid_line`: cascaded PID with live tuning
+Serial Monitor at 115200, line ending **New Line**:
+- `cal`: sweep the array across the line for 5 s · `go`: start · `s`: stop
+- `v <cps>`: both wheels to a speed (wheels off the ground) to tune the speed loop
+- `base <cps>`, `lkp <x>`, `lkd <x>`, `kff`/`skp`/`ski <x>`: tune live · `p`: print gains · `sign`: flip steering
+- Output is `label:value` pairs, so **Tools → Serial Plotter** graphs it.
 
-When the custom Car PCB (`hardware/watt_city_car_pcb`) arrives from fabrication, update the firmware for the bare `ESP32-S3-WROOM-1-N8` schematic (`microcontroller.kicad_sch`):
-- **IMU (I2C → SPI):** The breakout prototype uses an `LSM6DS3TR-C` over I2C (`0x6A`), whereas the custom PCB places an onboard **`LSM6DSM`** connected over **SPI** (`IMU_SPI.SCK`, `MOSI`, `MISO`, `CS`, plus `IMU_INT1`/`INT2`). Switch `lsm.begin_I2C()` to `lsm.begin_SPI(...)` (using `Adafruit_LSM6DSM`).
-- **Pin Definitions:** Verify and update the `#define` pin numbers in `main.ino` to match the final routed nets in `microcontroller.kicad_sch` (`QTR_ARR`, `LASER_I2C`, `MOTOR_R`, `pwm_left`, `dir1_left`, `dir2_left`, etc.).
-- **Camera & Stoplight Integration:** Add UART parsing for the `camera` co-processor AprilTag packets and BLE/ESP-NOW reception for the `autonomous-stoplight` state.
+**Tuning status:** the Sep 27 commit notes `base 2000` and `lkp 0.5` worked on the track; the defaults in code are still `base 600` and `lkp 0.30`. Set them over Serial, and update the defaults once confirmed.
 
-## Git workflow
+### `sensor_tests/` workflow
+1. `i2c_scanner` first when wiring breakouts.
+2. `qtr_sensor_calibration`: sweep for 5 s, then copy the printed arrays into `qtr_sensor_test` and `firmware/src/main/main.ino`.
+3. `vl53l0x_test`, `imu_lsm6ds3trc_test`, `motor_encoder_test`: one subsystem at a time over USB Serial (115200).
+4. `sensors_all_test`: full breakout burn-in over BLE (`ESP32S3_Car`), with a VL53L0X watchdog reset if I2C hangs.
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) for our team Git rules:
-1. **Always Pull before you start** and **Push when you finish** in GitHub Desktop.
-2. **KiCad:** Only one person edits the PCB at a time—claim it in `#watt-city` on Slack first.
-3. **Branches:** Pushing straight to `main` is fine for `sensor_tests/`, `hardware/`, and docs. Use a branch when experimenting on `firmware/src/main/main.ino` so `main` always stays drivable.
+## How the car talks to everything else
+
+`firmware/main_board/watt_link.h` defines both message formats:
+
+- **Camera → car (UART, 115200):** binary frame `[0xAA][0x55][TYPE][LEN][payload][XOR checksum]` carrying a `VisionPacket` (tag ID, range, bearing, obstacle flag, frame counter).
+- **Stoplight → car (ESP-NOW):** 3-byte `V2XPacket` (intersection ID, light state, seconds to change). The intersection ID **must match the AprilTag ID** at that intersection.
+
+> ⚠️ **Known mismatch:** the newest camera sketch (`camera/firmware/xiao_apriltag_largest`) sends **text** lines (`TAG,<id>,...`), not this binary format. `camera/firmware/vision_node_watt_link` does speak this format. Camera and Car teams need to agree on one before integration.
+
+## PCB (`hardware/`)
+
+KiCad **10** project `watt_city_car_pcb`, hierarchical: power, power protection, LDO (AP2112K-3.3), USB-C, microcontroller (ESP32-S3-WROOM-1-N8), motor controller (TB6612FNG), motor encoders, IR array connector, VL53L0X laser-distance sheets, and IMU (LSM6DSM).
+
+- Don't commit fab outputs on every change. Tag the commit you send to fab and attach the Gerbers to a GitHub Release.
+
+### Moving from DevKit breakouts to the custom PCB
+- **IMU (I2C → SPI):** the breakout is an `LSM6DS3TR-C` on I2C (`0x6A`); the PCB has an **`LSM6DSM`** on **SPI** (`IMU_SPI` SCK/MOSI/MISO/CS + `IMU_INT1`/`INT2`). Switch `lsm.begin_I2C()` to `begin_SPI(...)` with the matching driver class.
+- **Pins:** update every `#define` to the routed nets in `microcontroller.kicad_sch`.
+- **Integration:** add UART parsing for the camera and ESP-NOW reception for the stoplight (see `main_board/` for a starting point).
+
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before your first push. In short: pull before you start, push when you finish; push straight to `main` for `sensor_tests/`, `hardware/` (after claiming it) and docs; **use a branch for anything in `firmware/`**.
+
+## History
+
+`firmware/bringup`, `pid_line`, `main_board`, and the `docs/` PDFs came from the former `watt-city/car-code` repo (now archived) and were merged here with their commit history (`git log --follow firmware/pid_line/pid_line.ino`).

@@ -1,18 +1,24 @@
 # ---- Secrets: never commit WiFi passwords or keys (repo is public) ----
 secrets.h
 
-# ---- KiCad temporary, lock, and backup files ----
+# ---- KiCad: autosaves, backups, locks, per-user settings ----
 *-backups/
+_autosave-*
 *.lck
-~*.lck
+~*
 *.kicad_prl
 fp-info-cache
+# Generated fab outputs: attach to a GitHub Release instead of committing
+*-gerbers/
+gerbers/
 
 # ---- Editor & IDE clutter ----
 .history/
 .vscode/
-.pio/
+
+# ---- Arduino / PlatformIO build output ----
 build/
+.pio/
 
 # ---- Python ----
 __pycache__/
