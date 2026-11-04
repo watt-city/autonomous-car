@@ -8,7 +8,7 @@
  *   - Quadrature encoders (100:1 gearmotor, 12 CPR) -> speed/odometry
  *   - VL53L0X forward ToF -> obstacle slow/stop
  *   - LSM6DS3TR-C IMU (the *breakout*; PCB uses LSM6DSM -> swap driver later)
- *   - UART link from XIAO vision node (AprilTag id/pose + camera obstacle)
+ *   - UART link from the XIAO camera (text TAG lines: nearest AprilTag id + size)
  *   - ESP-NOW V2X receive (traffic-light state)
  *   - Serial test menu so you can bring up each subsystem alone
  *
@@ -47,7 +47,7 @@ static const int PIN_QTR_EMITTER = 36;
 // I2C (VL53L0X + IMU share the bus)
 static const int PIN_SDA = 1, PIN_SCL = 2;
 
-// UART to XIAO vision node (Serial1)
+// UART from XIAO camera (Serial1); format in watt_link.h
 static const int PIN_VISION_RX = 44;  // main RX  <- XIAO TX
 static const int PIN_VISION_TX = 43;  // main TX  -> XIAO RX (optional)
 static const uint32_t VISION_BAUD = 115200;
@@ -64,6 +64,12 @@ static float Kp = 0.08f, Ki = 0.0f, Kd = 1.2f;
 // Obstacle thresholds (mm)
 static const uint16_t TOF_STOP_MM = 90;
 static const uint16_t TOF_SLOW_MM = 220;
+
+// Red light: stop once the intersection tag looks at least this big (px).
+// ESTIMATE, not measured: 37 mm tag at ~0.35 m with QVGA f ~= 247 px gives
+// 247 * 0.037 / 0.35 ~= 26 px. Measure: hold a tag at your stop distance and
+// read side= from the camera's USB bench summary, then put that number here.
+static const float TAG_STOP_SIDE_PX = 26.0f;
 
 // Encoder geometry: 12 CPR on motor shaft (x4 quadrature) * gearbox
 static const float GEAR_RATIO   = 100.37f;   // Pololu 100:1 HPCB actual
@@ -86,7 +92,7 @@ bool imuOK = false;
 
 volatile long encCountL = 0, encCountR = 0;
 
-VisionPacket vision = {0, -1, 0, 0, 0, 0};
+VisionReading vision = {-1, 0, 0, 0, 0};
 uint32_t lastVisionMs = 0;
 
 V2XPacket v2x = {0, LIGHT_UNKNOWN, 0};
@@ -150,28 +156,21 @@ void imuInit() {
 }
 
 // ======================= LINKS =======================
-// --- UART framer: parse VisionPacket from XIAO ---
+// --- Camera link: read text lines from the XIAO, one TAG line per frame ---
 void pollVision() {
-  static uint8_t st = 0, type = 0, len = 0, idx = 0, buf[64], sum = 0;
+  static char line[64];
+  static uint8_t n = 0;
   while (Serial1.available()) {
-    uint8_t b = Serial1.read();
-    switch (st) {
-      case 0: st = (b == WATT_SYNC0) ? 1 : 0; break;
-      case 1: st = (b == WATT_SYNC1) ? 2 : 0; break;
-      case 2: type = b; st = 3; break;
-      case 3: len = b; idx = 0; st = (len <= sizeof(buf)) ? 4 : 0; break;
-      case 4:
-        buf[idx++] = b;
-        if (idx >= len) st = 5;
-        break;
-      case 5:
-        sum = watt_checksum(type, buf, len);
-        if (b == sum && type == MSG_VISION && len == sizeof(VisionPacket)) {
-          memcpy(&vision, buf, sizeof(VisionPacket));
-          lastVisionMs = millis();
-        }
-        st = 0;
-        break;
+    char c = (char)Serial1.read();
+    if (c == '\n') {
+      line[n] = '\0';
+      VisionReading r;
+      if (watt_parse_tag_line(line, r)) { vision = r; lastVisionMs = millis(); }
+      n = 0;
+    } else if (n < sizeof(line) - 1) {
+      line[n++] = c;
+    } else {
+      n = 0;   // line too long: drop it and resync on the next newline
     }
   }
 }
@@ -194,17 +193,18 @@ void v2xInit() {
 // ======================= POLICY: how tags + lights + obstacles gate motion =======================
 // Returns a speed scale 0.0..1.0 applied to baseSpeed. 0 = stop.
 float motionGate() {
-  // 1) hard stop on near ToF obstacle or fresh camera obstacle
+  // 1) hard stop on near ToF obstacle
+  // The camera sends a line every frame (TAG,-1 when empty), so silence for
+  // 300 ms means the camera link is down, not that no tag is in view.
   bool visionFresh = (millis() - lastVisionMs) < 300;
   if (lastRange <= TOF_STOP_MM) return 0.0f;
-  if (visionFresh && vision.obstacle) return 0.0f;
 
   // 2) intersection logic: if the camera reports a tag that matches a V2X
   //    intersection id, obey the light.
   bool v2xFresh = (millis() - lastV2XMs) < 2000;
   if (visionFresh && vision.tagId >= 0 && v2xFresh &&
       vision.tagId == v2x.intersectionId) {
-    if (v2x.lightState == LIGHT_RED)    return (vision.range_m < 0.35f) ? 0.0f : 0.35f;
+    if (v2x.lightState == LIGHT_RED)    return (vision.sidePx >= TAG_STOP_SIDE_PX) ? 0.0f : 0.35f;
     if (v2x.lightState == LIGHT_YELLOW) return 0.5f;
     // green falls through to normal speed
   }
