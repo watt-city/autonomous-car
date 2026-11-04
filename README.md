@@ -18,7 +18,7 @@ firmware/
   pid_line/          ← Cascaded PID line follower: line PD → per-wheel speed PI on the encoders, live serial tuning
   bringup/           ← Staged hardware check: I2C, QTR, each motor, encoders. Run this first on a new build
   main_board/        ← Integration draft: line follow + ToF + IMU + camera UART + ESP-NOW (PLACEHOLDER PINS)
-    watt_link.h      ← Shared message formats (camera → car UART, stoplight → car ESP-NOW)
+    watt_link.h      ← Message formats + TAG line parser (camera → car UART text, stoplight → car ESP-NOW)
 sensor_tests/        ← One small sketch per sensor, for isolating problems
   i2c_scanner/            ← Pings I2C (SDA=8, SCL=9) to confirm the IMU (0x6A) and VL53L0X (0x29)
   imu_lsm6ds3trc_test/    ← 3-axis accel + gyro from the LSM6DS3TR-C breakout
@@ -90,12 +90,13 @@ Serial Monitor at 115200, line ending **New Line**:
 
 ## How the car talks to everything else
 
-`firmware/main_board/watt_link.h` defines both message formats:
+`firmware/main_board/watt_link.h` defines both links:
 
-- **Camera → car (UART, 115200):** binary frame `[0xAA][0x55][TYPE][LEN][payload][XOR checksum]` carrying a `VisionPacket` (tag ID, range, bearing, obstacle flag, frame counter).
+- **Camera → car (UART text, 115200):** one line per frame from `camera/firmware/xiao_apriltag_largest`:
+  `TAG,<id>,<center_x>,<center_y>,<side_px>,<decision_margin>` or `TAG,-1` (no tag). `watt_parse_tag_line()` parses it. Because a line arrives every frame, no line for 300 ms means the camera link is down.
 - **Stoplight → car (ESP-NOW):** 3-byte `V2XPacket` (intersection ID, light state, seconds to change). The intersection ID **must match the AprilTag ID** at that intersection.
 
-> ⚠️ **Known mismatch:** the newest camera sketch (`camera/firmware/xiao_apriltag_largest`) sends **text** lines (`TAG,<id>,...`), not this binary format. `camera/firmware/vision_node_watt_link` does speak this format. Camera and Car teams need to agree on one before integration.
+**Red-light stop** (`main_board`): the car stops once the matching tag's `side_px` reaches `TAG_STOP_SIDE_PX`. The current value (26 px) is a pinhole **estimate** for ~0.35 m at QVGA; measure it by holding a tag at the stop distance and reading `side=` from the camera's USB bench summary.
 
 ## PCB (`hardware/`)
 
