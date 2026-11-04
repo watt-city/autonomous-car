@@ -66,10 +66,10 @@ static const uint16_t TOF_STOP_MM = 90;
 static const uint16_t TOF_SLOW_MM = 220;
 
 // Red light: stop once the intersection tag looks at least this big (px).
-// ESTIMATE, not measured: 37 mm tag at ~0.35 m with QVGA f ~= 247 px gives
-// 247 * 0.037 / 0.35 ~= 26 px. Measure: hold a tag at your stop distance and
-// read side= from the camera's USB bench summary, then put that number here.
-static const float TAG_STOP_SIDE_PX = 26.0f;
+// Measured (log book, Camera, 2026-08-28; QVGA, auto gain/exposure, 37 mm tag):
+//   ~25 cm -> 34.1 px, ~30 cm -> 27.1 px, ~35 cm -> 20.8 px
+// 21 px ~= stop at ~35 cm. Re-measure if the camera mount or FRAME_SIZE changes.
+static const float TAG_STOP_SIDE_PX = 21.0f;
 
 // Encoder geometry: 12 CPR on motor shaft (x4 quadrature) * gearbox
 static const float GEAR_RATIO   = 100.37f;   // Pololu 100:1 HPCB actual

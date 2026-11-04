@@ -96,7 +96,7 @@ Serial Monitor at 115200, line ending **New Line**:
   `TAG,<id>,<center_x>,<center_y>,<side_px>,<decision_margin>` or `TAG,-1` (no tag). `watt_parse_tag_line()` parses it. Because a line arrives every frame, no line for 300 ms means the camera link is down.
 - **Stoplight → car (ESP-NOW):** 3-byte `V2XPacket` (intersection ID, light state, seconds to change). The intersection ID **must match the AprilTag ID** at that intersection.
 
-**Red-light stop** (`main_board`): the car stops once the matching tag's `side_px` reaches `TAG_STOP_SIDE_PX`. The current value (26 px) is a pinhole **estimate** for ~0.35 m at QVGA; measure it by holding a tag at the stop distance and reading `side=` from the camera's USB bench summary.
+**Red-light stop** (`main_board`): the car stops once the matching tag's `side_px` reaches `TAG_STOP_SIDE_PX`. The current value (21 px) is from the Camera team's 2026-08-28 range test (20.8 px at ~35 cm, QVGA). Re-measure with the camera's USB bench summary (`side=`) if the mount or resolution changes.
 
 ## PCB (`hardware/`)
 
