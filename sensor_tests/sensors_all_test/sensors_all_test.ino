@@ -7,11 +7,11 @@
 #include <BLEUtils.h>
 #include <BLE2902.h>
 
-// --- BLE UUIDs (Standard Nordic UART Service) ---
+// BLE UUIDs (Standard Nordic UART Service)
 #define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
-// --- Pin Definitions ---
+// Pins
 #define I2C_SDA 8
 #define I2C_SCL 9
 #define TOF_XSHUT 12
@@ -20,7 +20,6 @@
 const uint8_t SensorCount = 8;
 uint8_t qtrPins[SensorCount] = {1, 2, 3, 4, 5, 6, 7, 10};
 
-// --- Objects ---
 QTRSensors qtr;
 Adafruit_LSM6DS3TRC lsm;
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
@@ -81,7 +80,7 @@ void setup() {
   pAdvertising->setMinPreferred(0x12);
   BLEDevice::startAdvertising();
 
-  Serial.println("\n--- BLE Started: Connect via BLE Terminal App to 'ESP32S3_Car' ---");
+  Serial.println("\n Connect via BLE Terminal App to 'ESP32S3_Car' ");
 
   // 2. Hardware Reset ToF
   resetVL53L0X();
@@ -124,7 +123,7 @@ void setup() {
 void loop() {
   String telemetry = "";
 
-  // --- A. QTR Read ---
+  // QTR Read
   uint16_t qtrValues[SensorCount];
   qtr.readCalibrated(qtrValues);
   telemetry += "QTR:[ ";
@@ -134,7 +133,7 @@ void loop() {
   }
   telemetry += " ]";
 
-  // --- B. 6-DoF IMU Read ---
+  // IMU Read
   sensors_event_t accel, gyro, temp;
   lsm.getEvent(&accel, &gyro, &temp);
 
@@ -146,7 +145,7 @@ void loop() {
                " Y:" + String(gyro.gyro.y, 2) + 
                " Z:" + String(gyro.gyro.z, 2) + "]";
 
-  // --- C. ToF Read ---
+  // ToF Read
   telemetry += " | DIST: ";
   if (lox.isRangeComplete()) {
     uint16_t distance = lox.readRange();

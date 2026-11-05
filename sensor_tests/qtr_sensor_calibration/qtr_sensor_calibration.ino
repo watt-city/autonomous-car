@@ -14,7 +14,7 @@ void setup() {
   qtr.setSensorPins(sensorPins, SensorCount);
   qtr.setEmitterPin(11); // CTRL Pin
 
-  Serial.println("\n--- CALIBRATING: Sweep all 8 sensors over black line & white paper ---");
+  Serial.println("\n Calibrating: Sweep all 8 sensors over black line & white paper ");
 
   // Calibrate for 5 seconds (200 iterations * 25ms = 5000ms)
   for (uint16_t i = 0; i < 200; i++) {
@@ -22,9 +22,7 @@ void setup() {
     delay(25);
   }
 
-  Serial.println("\n=======================================================");
-  Serial.println("CALIBRATION COMPLETE! COPY AND PASTE THESE ARRAYS:");
-  Serial.println("=======================================================\n");
+  Serial.println("copy and paste these arrays:");
 
   // Print minimum (white) calibration array
   Serial.print("uint16_t savedMin[8] = {");
@@ -42,13 +40,11 @@ void setup() {
   }
   Serial.println("};\n");
 
-  Serial.println("=======================================================");
-  Serial.println("Pausing for 10 seconds so you can copy the values...");
-  Serial.println("=======================================================\n");
-  
+  Serial.println("pausing for 10 sec");
+
   delay(10000); // 10-second pause to copy text easily
 
-  Serial.println("--- Starting Live Sensor Readings ---\n");
+  Serial.println("Live Sensor Reading\n");
 }
 
 void loop() {
