@@ -7,6 +7,10 @@
 //
 // Starting gains below are rough guesses from the bring-up numbers
 // (duty 120 -> ~1700 counts/s), NOT derived from a model. Tune them.
+//
+// Line position is computed here (not with readLineBlack) so that a weak reading,
+// e.g. a narrow line sitting between two sensors, holds the last good error
+// instead of jumping to the library's +/-3500 "lost" value.
 
 #include <QTRSensors.h>
 
@@ -35,10 +39,14 @@ const float    DT       = LOOP_US / 1e6f;
 float kff  = 0.07f;  // feedforward: duty per count/s
 float skp  = 0.02f;  // speed P: duty per count/s of error
 float ski  = 0.10f;  // speed I: duty per (count/s * s)
-float lkp  = 0.30f;  // line P: count/s of steering per position unit
+float lkp  = 1.0f;   // line P: count/s of steering per position unit
 float lkd  = 0.0f;   // line D: count/s per (position unit / s). Start at 0.
-float base = 600;    // line-following base speed, counts/s
+float base = 1500;   // line-following base speed, counts/s
 int   lineSign = 1;  // flip to -1 if the car steers away from the line
+
+// Line detection
+float lineThr  = 60;   // peak calibrated value (0..1000) above this = line seen
+const uint16_t NOISE_FLOOR = 30;  // sensor values at/below this are ignored in the average
 
 // Outer-sensor guard: sensors 0,1 and 6,7 should read light (line stays on 2..5).
 // If either outer pair sees the line, slow down and steer harder until it's back.
@@ -93,6 +101,8 @@ float speedTarget = 0;              // for SPEED mode
 float velL = 0, velR = 0;           // filtered counts/s
 long  prevCL = 0, prevCR = 0;
 float prevErr = 0; bool firstStep = true;
+float holdErr = 0;                  // last good line error (held through weak readings)
+uint16_t peak = 0;                  // strongest sensor this step (for telemetry)
 uint32_t lastSeenLine = 0;
 int loopCount = 0;
 bool outerHit = false;
@@ -100,12 +110,29 @@ bool outerHit = false;
 void resetCtrl() {
   piL.integ = piR.integ = 0;
   firstStep = true;
+  holdErr = 0;
   lastSeenLine = millis();
 }
 
 void goIdle(const char *why) {
   mode = IDLE; stopAll();
   Serial.printf("# IDLE (%s)\n", why);
+}
+
+// ---------- Line position ----------
+// Fills qtrVals with calibrated readings and peak with the strongest one.
+// Returns true and sets posOut (0..7000) if the line is seen; false otherwise.
+bool readLinePos(float &posOut) {
+  qtr.readCalibrated(qtrVals);
+  uint32_t sum = 0, wsum = 0;
+  peak = 0;
+  for (int i = 0; i < 8; i++) {
+    uint16_t v = qtrVals[i];
+    if (v > peak) peak = v;
+    if (v > NOISE_FLOOR) { sum += v; wsum += (uint32_t)v * i * 1000; }
+  }
+  if (peak > lineThr && sum > 0) { posOut = (float)wsum / sum; return true; }
+  return false;
 }
 
 // ---------- Control step (runs at 100 Hz) ----------
@@ -121,13 +148,15 @@ void controlStep() {
   if (mode == SPEED) {
     tL = tR = speedTarget;
   } else if (mode == LINE) {
-    uint16_t pos = qtr.readLineBlack(qtrVals);
-    uint16_t peak = 0;
-    for (int i = 0; i < 8; i++) peak = max(peak, qtrVals[i]);
-    if (peak > 300) lastSeenLine = millis();
-    else if (millis() - lastSeenLine > 500) { goIdle("line lost"); return; }
+    float pos;
+    if (readLinePos(pos)) {
+      lastSeenLine = millis();
+      holdErr = lineSign * (pos - 3500.0f);         // -3500..+3500
+    } else if (millis() - lastSeenLine > 500) {
+      goIdle("line lost"); return;
+    }
+    err = holdErr;   // weak/no reading -> keep last good error, never jump to +/-3500
 
-    err = lineSign * ((float)pos - 3500.0f);          // -3500..+3500
     float d = firstStep ? 0 : (err - prevErr) / DT;
     prevErr = err; firstStep = false;
     outerHit = qtrVals[0] > outerThr || qtrVals[1] > outerThr ||
@@ -151,8 +180,8 @@ void controlStep() {
       Serial.printf("tgt:%.0f,velL:%.0f,velR:%.0f,dutyL:%d,dutyR:%d\n",
                     speedTarget, velL, velR, dutyL, dutyR);
     else
-      Serial.printf("err:%.0f,corr:%.0f,outer:%d,velL:%.0f,velR:%.0f\n",
-                    err, corr, outerHit ? 1000 : 0, velL, velR);
+      Serial.printf("err:%.0f,corr:%.0f,outer:%d,peak:%u,velL:%.0f,velR:%.0f\n",
+                    err, corr, outerHit ? 1000 : 0, peak, velL, velR);
   }
 }
 
@@ -173,7 +202,8 @@ void calibrate() {
 void printGains() {
   Serial.printf("# kff=%.4f skp=%.4f ski=%.4f | lkp=%.4f lkd=%.5f base=%.0f sign=%d\n",
                 kff, skp, ski, lkp, lkd, base, lineSign);
-  Serial.printf("# othr=%.0f ogain=%.2f oslow=%.2f\n", outerThr, outerGain, outerSlow);
+  Serial.printf("# lthr=%.0f | othr=%.0f ogain=%.2f oslow=%.2f\n",
+                lineThr, outerThr, outerGain, outerSlow);
 }
 void printHelp() {
   Serial.println("# Commands (New Line ending):");
@@ -181,10 +211,14 @@ void printHelp() {
   Serial.println("#  v <cps>           both wheels to speed (wheels OFF the ground)");
   Serial.println("#  cal               5 s line calibration");
   Serial.println("#  go                line follow (after cal)");
+  Serial.println("#  r                 print calibrated sensors + position (motors stay off)");
+  Serial.println("#  raw               print raw sensor times in us (motors stay off)");
+  Serial.println("#  rawoff            same as raw but with emitters OFF (diagnostic)");
   Serial.println("#  kff|skp|ski <x>   speed loop gains");
   Serial.println("#  lkp|lkd <x>       line loop gains");
   Serial.println("#  base <cps>        line base speed");
   Serial.println("#  sign              flip steering direction");
+  Serial.println("#  lthr <x>          line-seen threshold (peak calibrated value)");
   Serial.println("#  othr|ogain|oslow <x>  outer-sensor guard (threshold, gain x, speed frac)");
   Serial.println("#  p                 print gains");
 }
@@ -201,15 +235,41 @@ void handleCmd(String s) {
   else if (k == "v" && hasV) { speedTarget = v; resetCtrl(); mode = SPEED; }
   else if (k == "cal") calibrate();
   else if (k == "go") {
-  if (!calibrated) Serial.println("# run 'cal' first");
-  else {
-    qtr.readCalibrated(qtrVals);
-    Serial.print("# at go:");
-    for (int i = 0; i < 8; i++) Serial.printf(" %u", qtrVals[i]);
-    Serial.println();
-    resetCtrl(); mode = LINE; Serial.println("# LINE");
+    if (!calibrated) Serial.println("# run 'cal' first");
+    else {
+      qtr.readCalibrated(qtrVals);
+      Serial.print("# at go:");
+      for (int i = 0; i < 8; i++) Serial.printf(" %u", qtrVals[i]);
+      Serial.println();
+      resetCtrl(); mode = LINE; Serial.println("# LINE");
+    }
   }
-}
+  else if (k == "r") {
+    if (!calibrated) { Serial.println("# run 'cal' first"); return; }
+    float pos;
+    bool seen = readLinePos(pos);
+    Serial.print("# cal:");
+    for (int i = 0; i < 8; i++) Serial.printf(" %u", qtrVals[i]);
+    if (seen) Serial.printf("  peak=%u pos=%.0f\n", peak, pos);
+    else      Serial.printf("  peak=%u pos=NONE (below lthr)\n", peak);
+    return;
+  }
+  else if (k == "raw") {
+    uint16_t raw[8];
+    qtr.read(raw);                       // uncalibrated, us
+    Serial.print("# raw:");
+    for (int i = 0; i < 8; i++) Serial.printf(" %u", raw[i]);
+    Serial.println();
+    return;
+  }
+  else if (k == "rawoff") {
+    uint16_t raw[8];
+    qtr.read(raw, QTRReadMode::Off);     // emitters OFF, uncalibrated, us
+    Serial.print("# raw(emitters off):");
+    for (int i = 0; i < 8; i++) Serial.printf(" %u", raw[i]);
+    Serial.println();
+    return;
+  }
   else if (k == "kff" && hasV) kff = v;
   else if (k == "skp" && hasV) skp = v;
   else if (k == "ski" && hasV) ski = v;
@@ -217,6 +277,7 @@ void handleCmd(String s) {
   else if (k == "lkd" && hasV) lkd = v;
   else if (k == "base" && hasV) base = v;
   else if (k == "sign") lineSign = -lineSign;
+  else if (k == "lthr" && hasV) lineThr = v;
   else if (k == "othr" && hasV) outerThr = v;
   else if (k == "ogain" && hasV) outerGain = v;
   else if (k == "oslow" && hasV) outerSlow = v;
