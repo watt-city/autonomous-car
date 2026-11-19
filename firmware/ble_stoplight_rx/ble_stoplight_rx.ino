@@ -25,7 +25,7 @@
 
 // ---------------- user settings ----------------
 #define HAS_RGB_LED  1        // set 0 if your receiver board has no WS2812
-#define RGB_PIN      48       // ESP32-S3 DevKitC-1 v1.0 = 48, v1.1 = 38
+#define RGB_PIN      38       // board silkscreen "RGB@IO38" = 38; some DevKitC-1 v1.0 boards use 48
 #define BRIGHTNESS   40
 #define MAX_LIGHTS   16
 #define COMPANY_ID   0xFFFF   // must match the transmitter
